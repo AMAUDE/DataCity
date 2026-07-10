@@ -1,8 +1,8 @@
 id,nom,type,latitude,longitude,district_region,departement_commune,verifie,categorie,source
-cmreo0298003d126q3ahsxowp,BCEAO — Direction Nationale (Abidjan),banque_centrale,5.325,-4.022,Abidjan,Plateau,oui,banque centrale,BCEAO
-cmreo029c003f126qhqhmzqv1,BRVM — Bourse Régionale des Valeurs Mobilières,bourse,5.323,-4.02,Abidjan,Plateau,oui,marché financier,BCEAO
-cmreo029g003h126qbm1n0xzw,Direction Générale du Trésor Public,tresor,5.327,-4.0175,Abidjan,Plateau,oui,trésor,BCEAO
-cmreo029l003j126qiu8kzyer,Siège SGCI (Société Générale),banque,5.3255,-4.0185,Abidjan,Plateau,non,banque commerciale,OpenStreetMap
-cmreo029q003l126qivzvvepq,Siège Ecobank Côte d'Ivoire,banque,5.324,-4.0165,Abidjan,Plateau,non,banque commerciale,OpenStreetMap
-cmreo029u003n126qb98d2c6s,Siège NSIA Banque,banque,5.3235,-4.0155,Abidjan,Plateau,non,banque commerciale,OpenStreetMap
-cmreo029y003p126qeivyo2im,Agence BCEAO de Bouaké,banque_centrale,7.691,-5.032,Gbêkê,Bouaké,oui,banque centrale,BCEAO
+cmrev3ldu003dyo7ezausz57f,BCEAO — Direction Nationale (Abidjan),banque_centrale,5.325,-4.022,Abidjan,Plateau,oui,banque centrale,BCEAO
+cmrev3le1003fyo7ex8hgpmms,BRVM — Bourse Régionale des Valeurs Mobilières,bourse,5.323,-4.02,Abidjan,Plateau,oui,marché financier,BCEAO
+cmrev3le6003hyo7etibigkhn,Direction Générale du Trésor Public,tresor,5.327,-4.0175,Abidjan,Plateau,oui,trésor,BCEAO
+cmrev3lea003jyo7e3aeq1j4d,Siège SGCI (Société Générale),banque,5.3255,-4.0185,Abidjan,Plateau,non,banque commerciale,OpenStreetMap
+cmrev3lee003lyo7e3kimj15v,Siège Ecobank Côte d'Ivoire,banque,5.324,-4.0165,Abidjan,Plateau,non,banque commerciale,OpenStreetMap
+cmrev3lei003nyo7ehtmq08lk,Siège NSIA Banque,banque,5.3235,-4.0155,Abidjan,Plateau,non,banque commerciale,OpenStreetMap
+cmrev3len003pyo7eva33oojd,Agence BCEAO de Bouaké,banque_centrale,7.691,-5.032,Gbêkê,Bouaké,oui,banque centrale,BCEAO

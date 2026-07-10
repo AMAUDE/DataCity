@@ -29,6 +29,18 @@ function centroid(geometry) {
   return { lng: sx / n, lat: sy / n };
 }
 
+// Corrige le mojibake (UTF-8 lu en Latin-1) présent dans certaines sources.
+// Ex. "Aboisso-ComoÃ©" -> "Aboisso-Comoé".
+function fixEncoding(s) {
+  if (!s || !/[ÃÂ]/.test(s)) return s;
+  try {
+    const fixed = Buffer.from(s, "latin1").toString("utf8");
+    return /�/.test(fixed) ? s : fixed;
+  } catch {
+    return s;
+  }
+}
+
 const SOURCES = [
   { key: "INS-CI", name: "Institut National de la Statistique (INS-CI)", organization: "État de Côte d'Ivoire", url: "https://www.ins.ci", license: "Données publiques", reliability: 5, description: "Producteur officiel de la statistique publique ivoirienne." },
   { key: "geoBoundaries", name: "geoBoundaries", organization: "William & Mary geoLab", url: "https://www.geoboundaries.org", license: "CC BY 4.0 / Open", reliability: 4, description: "Limites administratives ouvertes et harmonisées au niveau mondial." },
@@ -187,12 +199,12 @@ async function main() {
     const c = centroid(feat.geometry);
     await prisma.feature.create({
       data: {
-        name: feat.properties.shapeName || "District",
+        name: fixEncoding(feat.properties.shapeName) || "District",
         featureType: "district",
         latitude: c.lat, longitude: c.lng,
         geometry: JSON.stringify(feat.geometry),
         properties: JSON.stringify({ niveau: "ADM1", shapeID: feat.properties.shapeID }),
-        admin1: feat.properties.shapeName || null,
+        admin1: fixEncoding(feat.properties.shapeName) || null,
         verified: true, datasetId: dsAdm1.id,
       },
     });
@@ -214,15 +226,46 @@ async function main() {
     const c = centroid(feat.geometry);
     await prisma.feature.create({
       data: {
-        name: feat.properties.shapeName || "Région",
+        name: fixEncoding(feat.properties.shapeName) || "Région",
         featureType: "region",
         latitude: c.lat, longitude: c.lng,
         geometry: JSON.stringify(feat.geometry),
         properties: JSON.stringify({ niveau: "ADM2", shapeID: feat.properties.shapeID }),
-        admin1: feat.properties.shapeName || null,
+        admin1: fixEncoding(feat.properties.shapeName) || null,
         verified: true, datasetId: dsAdm2.id,
       },
     });
+  }
+
+  // ---- Limites : Sous-préfectures (ADM3) ----
+  // Couche subnationale (COD-AB) également diffusée via HDX/OCHA.
+  const adm3Path = join(dataDir, "civ_ADM3.geojson");
+  if (existsSync(adm3Path)) {
+    const adm3 = JSON.parse(readFileSync(adm3Path, "utf8"));
+    const dsAdm3 = await prisma.dataset.create({
+      data: {
+        slug: "sous-prefectures-adm3-ci",
+        name: "Sous-préfectures (ADM3) — Côte d'Ivoire",
+        description: `${adm3.features.length} sous-préfectures (couche COD-AB, diffusée via HDX/OCHA).`,
+        format: "geojson", verified: true, verifiedAt: new Date(),
+        verifiedNote: "geoBoundaries gbOpen (ADM3), géométries simplifiées.",
+        themeId: themeMap["limites-administratives"].id, sourceId: sourceMap["geoBoundaries"].id,
+      },
+    });
+    for (const feat of adm3.features) {
+      const c = centroid(feat.geometry);
+      await prisma.feature.create({
+        data: {
+          name: fixEncoding(feat.properties.shapeName) || "Sous-préfecture",
+          featureType: "sous_prefecture",
+          latitude: c.lat, longitude: c.lng,
+          geometry: JSON.stringify(feat.geometry),
+          properties: JSON.stringify({ niveau: "ADM3", shapeID: feat.properties.shapeID }),
+          admin1: fixEncoding(feat.properties.shapeName) || null,
+          verified: true, datasetId: dsAdm3.id,
+        },
+      });
+    }
   }
 
   // ---- Continent (référence) ----

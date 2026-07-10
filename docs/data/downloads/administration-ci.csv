@@ -1,39 +1,39 @@
 id,nom,type,latitude,longitude,district_region,departement_commune,verifie,portee,source
-cmreo026u0029126qu5xi4ilf,Présidence de la République,institution,5.323,-4.017,Abidjan,Plateau,oui,nationale,Institut National de la Statistique (INS-CI)
-cmreo026y002b126qchza89cp,Primature,institution,5.325,-4.015,Abidjan,Plateau,oui,nationale,Institut National de la Statistique (INS-CI)
-cmreo0273002d126q68u9p3fa,Assemblée Nationale,institution,5.3195,-4.013,Abidjan,Plateau,oui,nationale,Institut National de la Statistique (INS-CI)
-cmreo0277002f126qcx4y1o5h,Préfecture d'Abidjan,prefecture,5.328,-4.02,Abidjan,Plateau,oui,district,Institut National de la Statistique (INS-CI)
-cmreo027c002h126quj9d2sm3,Préfecture de Yamoussoukro,prefecture,6.8276,-5.2893,Yamoussoukro,Yamoussoukro,oui,district,Institut National de la Statistique (INS-CI)
-cmreo027g002j126q5122iulh,Préfecture de Bouaké,prefecture,7.6939,-5.03,Gbêkê,Bouaké,oui,région,Institut National de la Statistique (INS-CI)
-cmreo027l002l126qc1lnrbux,Préfecture de Korhogo,prefecture,9.458,-5.6296,Poro,Korhogo,oui,région,Institut National de la Statistique (INS-CI)
-cmreo027p002n126q7q1pijca,Mairie du Plateau,mairie,5.326,-4.018,Abidjan,Plateau,oui,communale,Institut National de la Statistique (INS-CI)
-cmreo02ax0045126qupft15yu,Préfecture de Divo,prefecture,5.8394,-5.3572,Lôh-Djiboua,Divo,non,département,OpenStreetMap
-cmreo02b60049126qymk70nui,Préfecture de Gagnoa,prefecture,6.1319,-5.9506,Gôh,Gagnoa,non,département,OpenStreetMap
-cmreo02bf004d126q93w5h2fx,Préfecture de Soubré,prefecture,5.7847,-6.5936,Nawa,Soubré,non,département,OpenStreetMap
-cmreo02bq004h126qzxkmod3e,Préfecture de Séguéla,prefecture,7.9611,-6.6731,Worodougou,Séguéla,non,département,OpenStreetMap
-cmreo02by004l126qkq1rr1dy,Préfecture de Odienné,prefecture,9.5,-7.5667,Kabadougou,Odienné,non,département,OpenStreetMap
-cmreo02c7004p126q9tfh0be5,Préfecture de Bondoukou,prefecture,8.0402,-2.8,Gontougo,Bondoukou,non,département,OpenStreetMap
-cmreo02cg004t126qyazibad9,Préfecture de Bouna,prefecture,9.2667,-3,Bounkani,Bouna,non,département,OpenStreetMap
-cmreo02cp004x126qpiz36cqh,Préfecture de Ferkessédougou,prefecture,9.5928,-5.1947,Tchologo,Ferkessédougou,non,département,OpenStreetMap
-cmreo02cy0051126qb0keowad,Préfecture de Boundiali,prefecture,9.5217,-6.4869,Bagoué,Boundiali,non,département,OpenStreetMap
-cmreo02d80055126qf35hvkaq,Préfecture de Katiola,prefecture,8.1333,-5.1,Hambol,Katiola,non,département,OpenStreetMap
-cmreo02di0059126qhe7g6rub,Préfecture de Dabou,prefecture,5.3256,-4.3772,Grands-Ponts,Dabou,non,département,OpenStreetMap
-cmreo02dt005d126qq6aoiq3a,Préfecture de Agboville,prefecture,5.928,-4.2131,Agnéby-Tiassa,Agboville,non,département,OpenStreetMap
-cmreo02e4005h126qufpuidl8,Préfecture de Adzopé,prefecture,6.1069,-3.8619,La Mé,Adzopé,non,département,OpenStreetMap
-cmreo02ee005l126qrbjp7j8w,Préfecture de Aboisso,prefecture,5.4667,-3.2,Sud-Comoé,Aboisso,non,département,OpenStreetMap
-cmreo02eo005p126q433zzjv5,Préfecture de Dimbokro,prefecture,6.65,-4.7,N'Zi,Dimbokro,non,département,OpenStreetMap
-cmreo02ey005t126qx8ofu6t7,Préfecture de Bongouanou,prefecture,6.65,-4.2,Moronou,Bongouanou,non,département,OpenStreetMap
-cmreo02f8005x126qz2k0js70,Préfecture de Toumodi,prefecture,6.5667,-5.0167,Bélier,Toumodi,non,département,OpenStreetMap
-cmreo02fi0061126qklrxsjzx,Préfecture de Duékoué,prefecture,6.7419,-7.3436,Guémon,Duékoué,non,département,OpenStreetMap
-cmreo02fs0065126qlmaexqqt,Préfecture de Guiglo,prefecture,6.5442,-7.4869,Cavally,Guiglo,non,département,OpenStreetMap
-cmreo02g30069126q6lgty2u3,Préfecture de Sassandra,prefecture,4.95,-6.0833,Gbôklé,Sassandra,non,département,OpenStreetMap
-cmreo02gc006d126qtlycphnj,Préfecture de Minignan,prefecture,9.6197,-7.8342,Folon,Minignan,non,département,OpenStreetMap
-cmreo02gn006h126q05kwo3c5,Préfecture de Touba,prefecture,8.2833,-7.6833,Bafing,Touba,non,département,OpenStreetMap
-cmreo02gx006l126qlx4tja45,Préfecture de Bouaflé,prefecture,6.9908,-5.7444,Marahoué,Bouaflé,non,département,OpenStreetMap
-cmreo02h7006p126qt3n4sn0r,Préfecture de Issia,prefecture,6.4922,-6.5872,Haut-Sassandra,Issia,non,département,OpenStreetMap
-cmreo02hh006t126qvhdzmdpx,Préfecture de Vavoua,prefecture,7.3833,-6.4778,Haut-Sassandra,Vavoua,non,département,OpenStreetMap
-cmreo02hr006x126q18oe3xqf,Préfecture de Grand-Bassam,prefecture,5.2118,-3.7386,Sud-Comoé,Grand-Bassam,non,département,OpenStreetMap
-cmreo02i00071126qwriworot,Préfecture de Tanda,prefecture,7.8028,-3.1667,Gontougo,Tanda,non,département,OpenStreetMap
-cmreo02ia0075126ql36e8ryt,Préfecture de Daoukro,prefecture,7.0586,-3.9631,Iffou,Daoukro,non,département,OpenStreetMap
-cmreo02ij0079126qcqz29b3a,Préfecture de Bocanda,prefecture,7.0631,-4.4933,N'Zi,Bocanda,non,département,OpenStreetMap
-cmreo02it007d126qrqwpsxjh,Préfecture de Sinfra,prefecture,6.6203,-5.9219,Marahoué,Sinfra,non,département,OpenStreetMap
+cmrev3lar0029yo7e2d9duq1f,Présidence de la République,institution,5.323,-4.017,Abidjan,Plateau,oui,nationale,Institut National de la Statistique (INS-CI)
+cmrev3lav002byo7erfnrd598,Primature,institution,5.325,-4.015,Abidjan,Plateau,oui,nationale,Institut National de la Statistique (INS-CI)
+cmrev3lb0002dyo7eyc906o68,Assemblée Nationale,institution,5.3195,-4.013,Abidjan,Plateau,oui,nationale,Institut National de la Statistique (INS-CI)
+cmrev3lb5002fyo7eahzcbz5t,Préfecture d'Abidjan,prefecture,5.328,-4.02,Abidjan,Plateau,oui,district,Institut National de la Statistique (INS-CI)
+cmrev3lbb002hyo7edmifrxa1,Préfecture de Yamoussoukro,prefecture,6.8276,-5.2893,Yamoussoukro,Yamoussoukro,oui,district,Institut National de la Statistique (INS-CI)
+cmrev3lbf002jyo7epj4xh1lw,Préfecture de Bouaké,prefecture,7.6939,-5.03,Gbêkê,Bouaké,oui,région,Institut National de la Statistique (INS-CI)
+cmrev3lbk002lyo7ew343cja8,Préfecture de Korhogo,prefecture,9.458,-5.6296,Poro,Korhogo,oui,région,Institut National de la Statistique (INS-CI)
+cmrev3lbp002nyo7evuj0ytud,Mairie du Plateau,mairie,5.326,-4.018,Abidjan,Plateau,oui,communale,Institut National de la Statistique (INS-CI)
+cmrev3lfs0045yo7e2lsvtdy0,Préfecture de Divo,prefecture,5.8394,-5.3572,Lôh-Djiboua,Divo,non,département,OpenStreetMap
+cmrev3lg40049yo7elzyuyxky,Préfecture de Gagnoa,prefecture,6.1319,-5.9506,Gôh,Gagnoa,non,département,OpenStreetMap
+cmrev3lgf004dyo7ek4tcgbdz,Préfecture de Soubré,prefecture,5.7847,-6.5936,Nawa,Soubré,non,département,OpenStreetMap
+cmrev3lgp004hyo7ejdisz3ey,Préfecture de Séguéla,prefecture,7.9611,-6.6731,Worodougou,Séguéla,non,département,OpenStreetMap
+cmrev3lh2004lyo7ehs9aeoqb,Préfecture de Odienné,prefecture,9.5,-7.5667,Kabadougou,Odienné,non,département,OpenStreetMap
+cmrev3lhe004pyo7ee9nmu8ue,Préfecture de Bondoukou,prefecture,8.0402,-2.8,Gontougo,Bondoukou,non,département,OpenStreetMap
+cmrev3lho004tyo7elhndyw65,Préfecture de Bouna,prefecture,9.2667,-3,Bounkani,Bouna,non,département,OpenStreetMap
+cmrev3lhy004xyo7eh1vaqnzi,Préfecture de Ferkessédougou,prefecture,9.5928,-5.1947,Tchologo,Ferkessédougou,non,département,OpenStreetMap
+cmrev3lia0051yo7ettqqg64y,Préfecture de Boundiali,prefecture,9.5217,-6.4869,Bagoué,Boundiali,non,département,OpenStreetMap
+cmrev3lim0055yo7ef9gdpqfw,Préfecture de Katiola,prefecture,8.1333,-5.1,Hambol,Katiola,non,département,OpenStreetMap
+cmrev3lix0059yo7eznwhpq0p,Préfecture de Dabou,prefecture,5.3256,-4.3772,Grands-Ponts,Dabou,non,département,OpenStreetMap
+cmrev3lj8005dyo7etcwv3je2,Préfecture de Agboville,prefecture,5.928,-4.2131,Agnéby-Tiassa,Agboville,non,département,OpenStreetMap
+cmrev3ljj005hyo7el2jh4l80,Préfecture de Adzopé,prefecture,6.1069,-3.8619,La Mé,Adzopé,non,département,OpenStreetMap
+cmrev3ljz005lyo7e180bmnvc,Préfecture de Aboisso,prefecture,5.4667,-3.2,Sud-Comoé,Aboisso,non,département,OpenStreetMap
+cmrev3lkb005pyo7e8u064x8b,Préfecture de Dimbokro,prefecture,6.65,-4.7,N'Zi,Dimbokro,non,département,OpenStreetMap
+cmrev3lkn005tyo7e1g3wejeg,Préfecture de Bongouanou,prefecture,6.65,-4.2,Moronou,Bongouanou,non,département,OpenStreetMap
+cmrev3lkx005xyo7emriayd7d,Préfecture de Toumodi,prefecture,6.5667,-5.0167,Bélier,Toumodi,non,département,OpenStreetMap
+cmrev3ll80061yo7ejjbv0wf6,Préfecture de Duékoué,prefecture,6.7419,-7.3436,Guémon,Duékoué,non,département,OpenStreetMap
+cmrev3lli0065yo7e5d6roswn,Préfecture de Guiglo,prefecture,6.5442,-7.4869,Cavally,Guiglo,non,département,OpenStreetMap
+cmrev3llt0069yo7ex12nilcs,Préfecture de Sassandra,prefecture,4.95,-6.0833,Gbôklé,Sassandra,non,département,OpenStreetMap
+cmrev3lm5006dyo7ej7jn42dz,Préfecture de Minignan,prefecture,9.6197,-7.8342,Folon,Minignan,non,département,OpenStreetMap
+cmrev3ln2006hyo7e754u9d0v,Préfecture de Touba,prefecture,8.2833,-7.6833,Bafing,Touba,non,département,OpenStreetMap
+cmrev3lnd006lyo7e2o57u3h6,Préfecture de Bouaflé,prefecture,6.9908,-5.7444,Marahoué,Bouaflé,non,département,OpenStreetMap
+cmrev3lno006pyo7exg5wp1sz,Préfecture de Issia,prefecture,6.4922,-6.5872,Haut-Sassandra,Issia,non,département,OpenStreetMap
+cmrev3lnz006tyo7erbk7t1e9,Préfecture de Vavoua,prefecture,7.3833,-6.4778,Haut-Sassandra,Vavoua,non,département,OpenStreetMap
+cmrev3lo9006xyo7ehss9asjc,Préfecture de Grand-Bassam,prefecture,5.2118,-3.7386,Sud-Comoé,Grand-Bassam,non,département,OpenStreetMap
+cmrev3lok0071yo7echqzgy2b,Préfecture de Tanda,prefecture,7.8028,-3.1667,Gontougo,Tanda,non,département,OpenStreetMap
+cmrev3low0075yo7ez56e0dgg,Préfecture de Daoukro,prefecture,7.0586,-3.9631,Iffou,Daoukro,non,département,OpenStreetMap
+cmrev3lp90079yo7e281i54wc,Préfecture de Bocanda,prefecture,7.0631,-4.4933,N'Zi,Bocanda,non,département,OpenStreetMap
+cmrev3lpk007dyo7e3yfsu8k2,Préfecture de Sinfra,prefecture,6.6203,-5.9219,Marahoué,Sinfra,non,département,OpenStreetMap
