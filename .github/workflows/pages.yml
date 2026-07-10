@@ -39,6 +39,8 @@ jobs:
           DATABASE_URL: "file:./dev.db"
       - name: Configurer Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Téléverser l'artefact
         uses: actions/upload-pages-artifact@v3
         with:
