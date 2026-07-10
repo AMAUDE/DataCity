@@ -1,10 +1,8 @@
-name: Déployer la vitrine sur GitHub Pages
+name: Déployer DataCity sur GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-      - claude/geographic-data-library-o0329j
+    branches: [main, claude/geographic-data-library-o0329j]
   workflow_dispatch:
 
 permissions:
@@ -17,42 +15,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - name: Installer les dépendances
-        run: npm ci
-      - name: Préparer la base et charger les données
-        run: |
-          npx prisma db push --skip-generate
-          node prisma/seed.mjs
-        env:
-          DATABASE_URL: "file:./dev.db"
-      - name: Générer la vitrine statique
-        run: node scripts/export-static.mjs
-        env:
-          DATABASE_URL: "file:./dev.db"
-      - name: Configurer Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - name: Téléverser l'artefact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Déployer sur GitHub Pages
+      - uses: actions/checkout@v4
+      - name: Configurer Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Téléverser docs/ (application autonome)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - name: Déployer
         id: deployment
         uses: actions/deploy-pages@v4
