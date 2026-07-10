@@ -35,13 +35,17 @@
   <!-- THEMATIQUES -->
   <section class="tab" id="tab-themes" hidden>
     <div class="wrap">
-      <h2 class="page-h">Thématiques</h2>
-      <p class="page-sub">Les données organisées par domaine, avec leurs statistiques.</p>
-      <div class="chartcard card">
-        <div class="chart-h">Répartition des entités par thématique</div>
-        <div id="bars"></div>
+      <div id="themesOverview">
+        <h2 class="page-h">Thématiques</h2>
+        <p class="page-sub">Statistiques globales, puis détail par domaine (cliquez une thématique).</p>
+        <div class="statstrip" id="statStrip"></div>
+        <div class="chartcard card">
+          <div class="chart-h">Répartition des entités par thématique</div>
+          <div id="bars"></div>
+        </div>
+        <div class="themegrid" id="themeGrid"></div>
       </div>
-      <div class="themegrid" id="themeGrid"></div>
+      <div id="themesDetail" hidden></div>
     </div>
   </section>
 
@@ -153,6 +157,10 @@ header{position:sticky;top:0;z-index:1000;background:color-mix(in srgb,var(--bg)
 .bar .fill{height:100%;border-radius:99px}
 .bar .val{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
 .bar .lab{color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;gap:7px;align-items:center}
+.statstrip{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+@media(min-width:720px){.statstrip{grid-template-columns:repeat(5,1fr)}}
+.stat{padding:15px 16px}.stat b{display:block;font-size:24px;font-weight:800;letter-spacing:-.02em}
+.stat span{font-size:12.5px;color:var(--muted)}
 .themegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:40px}
 @media(min-width:680px){.themegrid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:1000px){.themegrid{grid-template-columns:repeat(4,1fr)}}
@@ -161,6 +169,39 @@ header{position:sticky;top:0;z-index:1000;background:color-mix(in srgb,var(--bg)
 .tcard .ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-size:20px}
 .tcard .n{font-size:24px;font-weight:800;margin-top:12px;letter-spacing:-.02em}
 .tcard .nm{font-weight:650}.tcard .mt{color:var(--muted);font-size:12px;margin-top:3px}
+/* Détail thématique */
+.det-head{display:flex;align-items:center;gap:14px;margin:24px 0 6px}
+.det-ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:26px;flex:none}
+.det-head h2{font-size:24px;letter-spacing:-.02em}
+.det-head .sub{color:var(--muted);font-size:13px;margin-top:2px}
+.backlink{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;font-weight:600;margin-top:18px;cursor:pointer}
+.backlink:hover{color:var(--ink)}
+.det-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+@media(min-width:900px){.det-grid{grid-template-columns:340px 1fr}}
+.det-card{padding:16px 18px}
+.det-card h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 12px}
+.subbar{display:grid;grid-template-columns:1fr 54px;gap:10px;align-items:center;margin:8px 0;font-size:13px}
+.subbar .lab{display:flex;flex-direction:column;gap:4px}
+.subbar .lab span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.subbar .track{height:8px;border-radius:99px;background:color-mix(in srgb,var(--ink) 8%,transparent);overflow:hidden;margin-top:2px}
+.subbar .fill{height:100%;border-radius:99px}
+.subbar .val{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.det-list input{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:9px 12px;font-size:14px;margin-bottom:12px;outline:none}
+.det-list input:focus{border-color:var(--accent)}
+.dtable-wrap{overflow-x:auto}
+.dtable{width:100%;border-collapse:collapse;font-size:13px}
+.dtable th,.dtable td{text-align:left;padding:8px 10px;white-space:nowrap}
+.dtable th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--line)}
+.dtable td{border-bottom:1px solid var(--line)}
+.dtable td.nm{white-space:normal;font-weight:600;min-width:160px}
+.dtable .mono{font-family:ui-monospace,monospace;font-size:11.5px;color:var(--muted)}
+.dpager{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:13px;color:var(--muted)}
+.dpager button{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:6px 11px;cursor:pointer;color:var(--ink);font-size:12.5px}
+.dpager button:disabled{opacity:.4;cursor:default}
+.note-sample{font-size:12px;color:var(--muted);margin-top:8px}
+.badge{display:inline-flex;align-items:center;border-radius:99px;padding:2px 9px;font-size:11px;font-weight:650}
+.b-ok{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
+.b-warn{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
 
 /* CARTO */
 .carto{display:grid;grid-template-columns:1fr;height:calc(100vh - 60px)}
@@ -218,11 +259,14 @@ function show(tab){
   document.querySelectorAll(".tab").forEach(s=>s.hidden = s.id!=="tab-"+tab);
   document.querySelectorAll("#tabs a").forEach(a=>a.classList.toggle("active",a.dataset.tab===tab));
   if(tab==="carte"){ initCartoPanel(); initMap(); setTimeout(()=>map&&map.invalidateSize(),60); }
+  if(tab==="themes"){ const d=document.getElementById("themesDetail"); if(d)d.hidden=true; const o=document.getElementById("themesOverview"); if(o)o.hidden=false; }
   window.scrollTo(0,0);
 }
+function route(){ const h=(location.hash||"").replace("#",""); const i=h.indexOf("/"); const tab=i<0?h:h.slice(0,i); const sub=i<0?"":decodeURIComponent(h.slice(i+1));
+  if(document.getElementById("tab-"+tab)){ show(tab); if(tab==="themes"&&sub) openThemeDetail(sub); } }
 document.getElementById("tabs").addEventListener("click",e=>{const a=e.target.closest("a");if(a){location.hash=a.dataset.tab;show(a.dataset.tab);}});
 document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>{location.hash=b.dataset.goto;show(b.dataset.goto);}));
-addEventListener("hashchange",()=>{const t=(location.hash||"").replace("#","");if(document.getElementById("tab-"+t))show(t);});
+addEventListener("hashchange",route);
 
 /* ---------------- Theme toggle ---------------- */
 const root=document.documentElement;
@@ -241,9 +285,10 @@ $("#themetoggle").addEventListener("click",()=>{
 
 /* ---------------- Thématiques ---------------- */
 (function(){
-  const infra=(cat.themes||[]).filter(t=>t.category!=="limites"||true);
-  const rows=(cat.themes||[]).map(t=>({slug:t.slug,name:t.name,color:t.color,icon:t.icon,cat:t.category,n:themeCount[t.slug]||0}))
-    .sort((a,b)=>b.n-a.n);
+  const s=cat.stats||{}; const pct=s.features?Math.round(s.verified/s.features*100):0;
+  $("#statStrip").innerHTML=[[fmt(s.features||0),"entités"],[s.datasets||0,"jeux de données"],[s.themes||0,"thématiques"],[s.sources||0,"sources"],[pct+"%","vérifiées"]]
+    .map(([n,l])=>`<div class="card stat"><b class="tnum">${n}</b><span>${l}</span></div>`).join("");
+  const rows=(cat.themes||[]).map(t=>({slug:t.slug,name:t.name,color:t.color,icon:t.icon,cat:t.category,n:themeCount[t.slug]||0})).sort((a,b)=>b.n-a.n);
   const max=Math.max(1,...rows.map(r=>r.n));
   $("#bars").innerHTML=rows.filter(r=>r.n>0).map(r=>`
     <div class="bar"><div class="lab"><span class="sw" style="width:10px;height:10px;border-radius:50%;background:${r.color};display:inline-block"></span>${esc(r.name)}</div>
@@ -252,13 +297,63 @@ $("#themetoggle").addEventListener("click",()=>{
   $("#themeGrid").innerHTML=rows.map(r=>`
     <div class="card tcard" data-t="${r.slug}">
       <div class="ic" style="background:color-mix(in srgb,${r.color} 18%,transparent)">${r.icon||"◍"}</div>
-      <div class="n tnum">${fmt(r.n)}</div>
-      <div class="nm">${esc(r.name)}</div>
-      <div class="mt">${esc(r.cat)}</div>
+      <div class="n tnum">${fmt(r.n)}</div><div class="nm">${esc(r.name)}</div><div class="mt">${esc(r.cat)}</div>
     </div>`).join("");
-  $("#themeGrid").addEventListener("click",e=>{const c=e.target.closest(".tcard");if(!c)return;
-    show("carte"); setActiveThemes([c.dataset.t]); });
+  $("#themeGrid").addEventListener("click",e=>{const c=e.target.closest(".tcard");if(c)openThemeDetail(c.dataset.t);});
 })();
+
+let detState=null;
+function openThemeDetail(slug){
+  const t=(cat.themes||[]).find(x=>x.slug===slug); if(!t)return;
+  const total=themeCount[slug]||0;
+  const types=(B.themeTypes&&B.themeTypes[slug])||[];
+  const tmax=Math.max(1,...types.map(x=>x.count));
+  const list=(B.points||[]).filter(p=>p.theme&&p.theme.slug===slug);
+  detState={list,filtered:list,page:1,per:20};
+  $("#themesDetail").innerHTML=`
+    <div class="backlink" id="backThemes">← Toutes les thématiques</div>
+    <div class="det-head"><div class="det-ic" style="background:color-mix(in srgb,${t.color} 18%,transparent)">${t.icon||"◍"}</div>
+      <div><h2>${esc(t.name)}</h2><div class="sub">${fmt(total)} entités · ${(t.datasets||[]).length} jeu(x) · ${esc(t.category)}</div></div></div>
+    <div class="det-grid">
+      <div class="card det-card"><h3>Statistiques par type</h3>
+        ${types.map(x=>`<div class="subbar"><div class="lab"><span>${esc(x.type)}</span>
+          <div class="track"><div class="fill" style="width:${Math.max(2,x.count/tmax*100)}%;background:${t.color}"></div></div></div>
+          <div class="val">${fmt(x.count)}</div></div>`).join("")||"<div style='color:var(--muted)'>—</div>"}
+      </div>
+      <div class="card det-card det-list"><h3>Liste des entités</h3>
+        <input id="detSearch" type="search" placeholder="Rechercher dans « ${esc(t.name)} »…">
+        <div class="dtable-wrap"><table class="dtable"><thead><tr>
+          <th>Nom</th><th>Type</th><th>District/Région</th><th>Coordonnées</th><th>Source</th><th>État</th></tr></thead>
+          <tbody id="detBody"></tbody></table></div>
+        <div class="dpager"><span id="detCount"></span><span style="display:flex;gap:8px;align-items:center">
+          <button id="detPrev">←</button><span id="detPg" class="tnum"></span><button id="detNext">→</button></span></div>
+        <div class="note-sample">Échantillon représentatif ; l'intégralité (${fmt(total)}) est en base et téléchargeable via l'application.</div>
+        <button class="btn ghost" id="detToMap" style="margin-top:12px">Voir sur la carte →</button>
+      </div></div>`;
+  $("#themesDetail").hidden=false; $("#themesOverview").hidden=true; window.scrollTo(0,0);
+  $("#backThemes").onclick=()=>{$("#themesDetail").hidden=true;$("#themesOverview").hidden=false;};
+  $("#detToMap").onclick=()=>{location.hash="carte";show("carte");setActiveThemes([slug]);};
+  $("#detSearch").oninput=e=>{const q=e.target.value.toLowerCase();
+    detState.filtered=detState.list.filter(p=>(p.name||"").toLowerCase().includes(q)||(p.type||"").toLowerCase().includes(q)||(p.admin1||"").toLowerCase().includes(q));
+    detState.page=1;renderDetList();};
+  $("#detPrev").onclick=()=>{if(detState.page>1){detState.page--;renderDetList();}};
+  $("#detNext").onclick=()=>{const mx=Math.ceil(detState.filtered.length/detState.per);if(detState.page<mx){detState.page++;renderDetList();}};
+  renderDetList();
+}
+function renderDetList(){
+  const st=detState; if(!st)return;
+  const pages=Math.max(1,Math.ceil(st.filtered.length/st.per)); if(st.page>pages)st.page=pages;
+  const rows=st.filtered.slice((st.page-1)*st.per,st.page*st.per);
+  $("#detBody").innerHTML=rows.map(p=>`<tr>
+    <td class="nm">${esc(p.name)}</td><td>${esc(p.type)}</td><td>${esc(p.admin1||"—")}</td>
+    <td class="mono">${p.lat!=null?p.lat.toFixed(4)+", "+p.lng.toFixed(4):"—"}</td>
+    <td>${esc(p.source||"")}</td>
+    <td>${p.verified?'<span class="badge b-ok">vérifié</span>':'<span class="badge b-warn">à vérifier</span>'}</td></tr>`).join("")
+    ||`<tr><td colspan="6" style="text-align:center;padding:22px;color:var(--muted)">Aucune entité.</td></tr>`;
+  $("#detCount").textContent=fmt(st.filtered.length)+" entité(s)";
+  $("#detPg").textContent=st.page+" / "+pages;
+  $("#detPrev").disabled=st.page<=1; $("#detNext").disabled=st.page>=pages;
+}
 
 /* ---------------- Sources ---------------- */
 (function(){
@@ -428,7 +523,7 @@ $("#q").addEventListener("input",e=>{
 });
 $("#results").addEventListener("click",e=>{const r=e.target.closest(".r");if(!r||r.dataset.i==null)return;
   const item=$("#results")._res[+r.dataset.i]; if(item&&item.lat!=null){ initMap(); fly(item.lat,item.lng,item.z,item.name,item.t); $("#results").hidden=true; }});
-// deep-link initial tab
-(function(){ const t=(location.hash||"").replace("#",""); if(t&&document.getElementById("tab-"+t)) show(t); })();
+// deep-link initial tab (supporte #themes/<slug>)
+route();
 })();
 </script>
