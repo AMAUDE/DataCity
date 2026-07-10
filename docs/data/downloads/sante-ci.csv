@@ -1,11 +1,41 @@
 id,nom,type,latitude,longitude,district_region,departement_commune,verifie,niveau,source
-cmre66yux001gb8aee0pxxmej,CHU de Cocody,chu,5.348,-3.986,Abidjan,Cocody,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
-cmre66yv1001ib8ae2d6bjp17,CHU de Treichville,chu,5.293,-4.002,Abidjan,Treichville,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
-cmre66yv4001kb8aeh7onvsaa,CHU de Yopougon,chu,5.34,-4.085,Abidjan,Yopougon,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
-cmre66yv8001mb8ae7mria7pi,Institut de Cardiologie d'Abidjan,institut,5.349,-3.988,Abidjan,Cocody,oui,spécialisé,Ministère de la Santé et de l'Hygiène Publique
-cmre66yvb001ob8aetwpju3wj,CHU de Bouaké,chu,7.69,-5.03,Gbêkê,Bouaké,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
-cmre66yvf001qb8aed6cz9m9w,CHR de Daloa,chr,6.8774,-6.4502,Haut-Sassandra,Daloa,oui,régional,Ministère de la Santé et de l'Hygiène Publique
-cmre66yvj001sb8aewfgg9kcb,CHR de Korhogo,chr,9.458,-5.6296,Poro,Korhogo,oui,régional,Ministère de la Santé et de l'Hygiène Publique
-cmre66yvn001ub8aeb1tgrpns,CHR de San-Pédro,chr,4.7485,-6.6363,San-Pédro,San-Pédro,oui,régional,Ministère de la Santé et de l'Hygiène Publique
-cmre66yvq001wb8aeedicwqh4,CHR de Man,chr,7.4125,-7.5538,Tonkpi,Man,oui,régional,Ministère de la Santé et de l'Hygiène Publique
-cmre66yvt001yb8aeni67wlkl,CHR d'Abengourou,chr,6.7297,-3.4964,Indénié-Djuablin,Abengourou,non,régional,OpenStreetMap
+cmreo025m001p126qfit486jj,CHU de Cocody,chu,5.348,-3.986,Abidjan,Cocody,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
+cmreo025q001r126qza9qreuq,CHU de Treichville,chu,5.293,-4.002,Abidjan,Treichville,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
+cmreo025u001t126q770my7eh,CHU de Yopougon,chu,5.34,-4.085,Abidjan,Yopougon,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
+cmreo025y001v126qljrrqobr,Institut de Cardiologie d'Abidjan,institut,5.349,-3.988,Abidjan,Cocody,oui,spécialisé,Ministère de la Santé et de l'Hygiène Publique
+cmreo0262001x126qftfj7z7t,CHU de Bouaké,chu,7.69,-5.03,Gbêkê,Bouaké,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
+cmreo0267001z126qwo8ynwvd,CHR de Daloa,chr,6.8774,-6.4502,Haut-Sassandra,Daloa,oui,régional,Ministère de la Santé et de l'Hygiène Publique
+cmreo026b0021126q9t6yceb5,CHR de Korhogo,chr,9.458,-5.6296,Poro,Korhogo,oui,régional,Ministère de la Santé et de l'Hygiène Publique
+cmreo026f0023126qitdwuus3,CHR de San-Pédro,chr,4.7485,-6.6363,San-Pédro,San-Pédro,oui,régional,Ministère de la Santé et de l'Hygiène Publique
+cmreo026k0025126q7kq1i6vy,CHR de Man,chr,7.4125,-7.5538,Tonkpi,Man,oui,régional,Ministère de la Santé et de l'Hygiène Publique
+cmreo026o0027126qozgqam82,CHR d'Abengourou,chr,6.7297,-3.4964,Indénié-Djuablin,Abengourou,non,régional,OpenStreetMap
+cmreo02b10047126qv2nlqnk1,Hôpital Général de Divo,hopital,5.845400000000001,-5.3512,Lôh-Djiboua,Divo,non,général,OpenStreetMap
+cmreo02ba004b126qh2qahx9s,Hôpital Général de Gagnoa,hopital,6.1379,-5.944599999999999,Gôh,Gagnoa,non,général,OpenStreetMap
+cmreo02bk004f126q9ev9nuns,Hôpital Général de Soubré,hopital,5.7907,-6.5876,Nawa,Soubré,non,général,OpenStreetMap
+cmreo02bu004j126qi94091ur,Hôpital Général de Séguéla,hopital,7.9671,-6.6671,Worodougou,Séguéla,non,général,OpenStreetMap
+cmreo02c3004n126qk6zrnjal,Hôpital Général de Odienné,hopital,9.506,-7.5607,Kabadougou,Odienné,non,général,OpenStreetMap
+cmreo02cb004r126qqkondy34,Hôpital Général de Bondoukou,hopital,8.0462,-2.794,Gontougo,Bondoukou,non,général,OpenStreetMap
+cmreo02cl004v126qf1r4w4xj,Hôpital Général de Bouna,hopital,9.2727,-2.994,Bounkani,Bouna,non,général,OpenStreetMap
+cmreo02ct004z126qp4qzmz4y,Hôpital Général de Ferkessédougou,hopital,9.5988,-5.1887,Tchologo,Ferkessédougou,non,général,OpenStreetMap
+cmreo02d30053126qt2od1tzy,Hôpital Général de Boundiali,hopital,9.5277,-6.4809,Bagoué,Boundiali,non,général,OpenStreetMap
+cmreo02dd0057126qlxirm8xo,Hôpital Général de Katiola,hopital,8.1393,-5.093999999999999,Hambol,Katiola,non,général,OpenStreetMap
+cmreo02do005b126q25pz3pc4,Hôpital Général de Dabou,hopital,5.3316,-4.3712,Grands-Ponts,Dabou,non,général,OpenStreetMap
+cmreo02dz005f126qceozsjzk,Hôpital Général de Agboville,hopital,5.934,-4.2071,Agnéby-Tiassa,Agboville,non,général,OpenStreetMap
+cmreo02e9005j126qmq2ytl0b,Hôpital Général de Adzopé,hopital,6.112900000000001,-3.8559,La Mé,Adzopé,non,général,OpenStreetMap
+cmreo02ej005n126q3b9faizo,Hôpital Général de Aboisso,hopital,5.472700000000001,-3.194,Sud-Comoé,Aboisso,non,général,OpenStreetMap
+cmreo02et005r126q1j4xsyg2,Hôpital Général de Dimbokro,hopital,6.656000000000001,-4.694,N'Zi,Dimbokro,non,général,OpenStreetMap
+cmreo02f3005v126q5bds3n05,Hôpital Général de Bongouanou,hopital,6.656000000000001,-4.194,Moronou,Bongouanou,non,général,OpenStreetMap
+cmreo02fd005z126q9hupbnvo,Hôpital Général de Toumodi,hopital,6.5727,-5.0107,Bélier,Toumodi,non,général,OpenStreetMap
+cmreo02fm0063126qj8owqoi9,Hôpital Général de Duékoué,hopital,6.7479,-7.3376,Guémon,Duékoué,non,général,OpenStreetMap
+cmreo02fx0067126qqcxincav,Hôpital Général de Guiglo,hopital,6.5502,-7.4809,Cavally,Guiglo,non,général,OpenStreetMap
+cmreo02g8006b126qcsnzst8n,Hôpital Général de Sassandra,hopital,4.956,-6.0773,Gbôklé,Sassandra,non,général,OpenStreetMap
+cmreo02gi006f126qbjbyxt2r,Hôpital Général de Minignan,hopital,9.6257,-7.8282,Folon,Minignan,non,général,OpenStreetMap
+cmreo02gs006j126qs4qdy2ss,Hôpital Général de Touba,hopital,8.2893,-7.6773,Bafing,Touba,non,général,OpenStreetMap
+cmreo02h2006n126qwbk3yla1,Hôpital Général de Bouaflé,hopital,6.9968,-5.7384,Marahoué,Bouaflé,non,général,OpenStreetMap
+cmreo02hc006r126qzcmqbpfs,Hôpital Général de Issia,hopital,6.498200000000001,-6.5812,Haut-Sassandra,Issia,non,général,OpenStreetMap
+cmreo02hl006v126qw6zzizhj,Hôpital Général de Vavoua,hopital,7.3893,-6.4718,Haut-Sassandra,Vavoua,non,général,OpenStreetMap
+cmreo02hw006z126qgcazt5wg,Hôpital Général de Grand-Bassam,hopital,5.2178,-3.7326,Sud-Comoé,Grand-Bassam,non,général,OpenStreetMap
+cmreo02i50073126q1smv1ol4,Hôpital Général de Tanda,hopital,7.808800000000001,-3.1607,Gontougo,Tanda,non,général,OpenStreetMap
+cmreo02ie0077126qcl3r8pfr,Hôpital Général de Daoukro,hopital,7.0646,-3.9571,Iffou,Daoukro,non,général,OpenStreetMap
+cmreo02io007b126q0ohctabu,Hôpital Général de Bocanda,hopital,7.069100000000001,-4.487299999999999,N'Zi,Bocanda,non,général,OpenStreetMap
+cmreo02iy007f126qfcb6w2c3,Hôpital Général de Sinfra,hopital,6.626300000000001,-5.9159,Marahoué,Sinfra,non,général,OpenStreetMap

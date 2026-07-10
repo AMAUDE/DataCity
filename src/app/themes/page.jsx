@@ -9,7 +9,7 @@ export default async function ThemesPage() {
     include: { _count: { select: { datasets: true } }, datasets: { include: { _count: { select: { features: true } } } } },
     orderBy: [{ category: "asc" }, { name: "asc" }],
   });
-  const groups = { infrastructure: [], limites: [] };
+  const groups = { infrastructure: [], limites: [], indicateurs: [] };
   themes.forEach((t) => groups[t.category]?.push(t));
 
   const Section = ({ title, items }) => (
@@ -41,6 +41,9 @@ export default async function ThemesPage() {
       <p className="text-slate-400 mb-8">Les données organisées par domaine, pour la Côte d'Ivoire.</p>
       <Section title="Infrastructures" items={groups.infrastructure} />
       <Section title="Limites administratives" items={groups.limites} />
+      {groups.indicateurs.length > 0 && (
+        <Section title="Population & Économie" items={groups.indicateurs} />
+      )}
     </div>
   );
 }

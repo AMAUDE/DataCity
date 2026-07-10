@@ -1,7 +1,7 @@
 id,nom,type,latitude,longitude,district_region,departement_commune,verifie,branche,source
-cmre66yxb002sb8aem4zmq7gt,État-Major Général des Armées,etat_major,5.319,-4.019,Abidjan,Plateau,oui,interarmées,Institut National de la Statistique (INS-CI)
-cmre66yxf002ub8ae1pace9f5,Camp militaire de Gallieni,camp,5.321,-4.023,Abidjan,Plateau,oui,armée de terre,Institut National de la Statistique (INS-CI)
-cmre66yxi002wb8aeiup5wnom,Camp militaire d'Akouédo,camp,5.383,-3.92,Abidjan,Cocody,non,armée de terre,OpenStreetMap
-cmre66yxm002yb8aeazivs76o,Base Aérienne d'Abidjan (Port-Bouët),base_aerienne,5.261,-3.926,Abidjan,Port-Bouët,oui,armée de l'air,OpenStreetMap
-cmre66yxp0030b8aehopc9j8w,Base Navale d'Abidjan,base_navale,5.27,-4.01,Abidjan,Treichville,non,marine,OpenStreetMap
-cmre66yxt0032b8aesaaj09od,Académie Militaire de Zambakro,academie,6.75,-5.4,Yamoussoukro,Yamoussoukro,non,formation,OpenStreetMap
+cmreo028i0031126qlcpi4z0i,État-Major Général des Armées,etat_major,5.319,-4.019,Abidjan,Plateau,oui,interarmées,Institut National de la Statistique (INS-CI)
+cmreo028n0033126qwgrf5auw,Camp militaire de Gallieni,camp,5.321,-4.023,Abidjan,Plateau,oui,armée de terre,Institut National de la Statistique (INS-CI)
+cmreo028r0035126qh8sxh05l,Camp militaire d'Akouédo,camp,5.383,-3.92,Abidjan,Cocody,non,armée de terre,OpenStreetMap
+cmreo028v0037126qvwcls4og,Base Aérienne d'Abidjan (Port-Bouët),base_aerienne,5.261,-3.926,Abidjan,Port-Bouët,oui,armée de l'air,OpenStreetMap
+cmreo028z0039126q4xpom3lb,Base Navale d'Abidjan,base_navale,5.27,-4.01,Abidjan,Treichville,non,marine,OpenStreetMap
+cmreo0293003b126qa0l2lxbf,Académie Militaire de Zambakro,academie,6.75,-5.4,Yamoussoukro,Yamoussoukro,non,formation,OpenStreetMap

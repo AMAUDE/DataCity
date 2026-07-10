@@ -1,12 +1,14 @@
 import { PrismaClient } from "@prisma/client";
-import { readFileSync } from "fs";
+import { readFileSync, existsSync, readdirSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import { infrastructure } from "../data/infrastructure.mjs";
+import { regional } from "../data/regional.mjs";
 
 const prisma = new PrismaClient();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = join(__dirname, "..", "data");
+const ingestedDir = join(dataDir, "ingested");
 
 // Centroïde approximatif d'une géométrie GeoJSON (moyenne des sommets).
 function centroid(geometry) {
@@ -35,6 +37,14 @@ const SOURCES = [
   { key: "MJDH", name: "Ministère de la Justice et des Droits de l'Homme", organization: "État de Côte d'Ivoire", url: "https://www.justice.gouv.ci", license: "Données publiques", reliability: 5, description: "Implantation des juridictions et établissements pénitentiaires." },
   { key: "BCEAO", name: "BCEAO", organization: "Banque Centrale des États de l'Afrique de l'Ouest", url: "https://www.bceao.int", license: "Données publiques", reliability: 5, description: "Institutions financières et marché régional (BRVM)." },
   { key: "OSM", name: "OpenStreetMap", organization: "Fondation OpenStreetMap", url: "https://www.openstreetmap.org", license: "ODbL 1.0", reliability: 3, description: "Données géographiques contributives et communautaires." },
+  { key: "ANSTAT", name: "Géoportail ANSTAT", organization: "Agence Nationale de la Statistique", url: "https://geoportail.anstat.ci", license: "Données publiques", reliability: 5, description: "Géoportail officiel de la statistique ivoirienne (WFS)." },
+  { key: "CNTIG", name: "CNTIG", organization: "Comité National de Télédétection et d'Information Géographique", url: "https://www.cntig.ci", license: "Données publiques", reliability: 5, description: "Coordination de l'information géographique nationale." },
+  { key: "BNETD", name: "BNETD", organization: "Bureau National d'Études Techniques et de Développement", url: "https://www.bnetd.ci", license: "Données publiques", reliability: 5, description: "Études et données d'aménagement du territoire." },
+  { key: "OpenData-CI", name: "OpenData gouv.ci", organization: "Gouvernement de Côte d'Ivoire", url: "https://data.gouv.ci", license: "Licence Ouverte", reliability: 4, description: "Portail national des données ouvertes." },
+  { key: "DIVA-GIS", name: "DIVA-GIS", organization: "DIVA-GIS", url: "https://www.diva-gis.org", license: "Données libres", reliability: 3, description: "Données GIS gratuites par pays (limites, réseaux, relief)." },
+  { key: "FAO", name: "FAO", organization: "Organisation des Nations Unies pour l'alimentation et l'agriculture", url: "https://www.fao.org", license: "CC BY 4.0", reliability: 5, description: "Indicateurs agricoles et environnementaux (FAOSTAT)." },
+  { key: "Banque Mondiale", name: "Banque Mondiale", organization: "World Bank Group", url: "https://data.worldbank.org", license: "CC BY 4.0", reliability: 5, description: "Indicateurs socio-économiques nationaux." },
+  { key: "HDX (HumData)", name: "HDX (HumData)", organization: "OCHA — Humanitarian Data Exchange", url: "https://data.humdata.org", license: "voir HDX", reliability: 4, description: "Données humanitaires ouvertes (santé, éducation, population)." },
 ];
 
 const THEMES = [
@@ -48,6 +58,7 @@ const THEMES = [
   { slug: "limites-administratives", name: "Limites administratives", category: "limites", icon: "🗺️", color: "#14b8a6", description: "Districts (ADM1) et régions (ADM2) de Côte d'Ivoire." },
   { slug: "pays", name: "Pays", category: "limites", icon: "🇨🇮", color: "#f77f00", description: "Frontière nationale de la Côte d'Ivoire." },
   { slug: "continent", name: "Continent", category: "limites", icon: "🌍", color: "#64748b", description: "Situation continentale (Afrique de l'Ouest)." },
+  { slug: "indicateurs", name: "Population & Économie", category: "indicateurs", icon: "📈", color: "#10b981", description: "Indicateurs nationaux (Banque Mondiale, FAO)." },
 ];
 
 function slugify(s) {
@@ -113,7 +124,7 @@ async function main() {
 
   console.log("→ Infrastructures…");
   let infraCount = 0;
-  for (const f of infrastructure) {
+  for (const f of [...infrastructure, ...regional]) {
     const ds = datasetByTheme[f.theme];
     const src = sourceMap[f.source] || sourceMap["INS-CI"];
     await prisma.feature.create({
@@ -232,6 +243,64 @@ async function main() {
       verified: true, datasetId: dsCont.id,
     },
   });
+
+  // ---- Données ingérées par les connecteurs (data/ingested/*.geojson) ----
+  if (existsSync(ingestedDir)) {
+    const files = readdirSync(ingestedDir).filter((f) => f.endsWith(".geojson"));
+    console.log(`→ Données ingérées (${files.length} fichier·s)…`);
+    for (const file of files) {
+      let fc;
+      try { fc = JSON.parse(readFileSync(join(ingestedDir, file), "utf8")); }
+      catch { continue; }
+      const feats = fc.features || [];
+      if (!feats.length) continue;
+      const meta = fc.metadata || {};
+      const theme = themeMap[meta.theme];
+      if (!theme) { console.log(`   ${file}: thème « ${meta.theme} » inconnu, ignoré.`); continue; }
+      // Source : créée à la volée si nécessaire.
+      let src = sourceMap[meta.source];
+      if (!src) {
+        src = await prisma.source.upsert({
+          where: { name: meta.source || "Source importée" },
+          update: {},
+          create: { name: meta.source || "Source importée", license: meta.license || null, reliability: 3,
+            description: "Source ingérée automatiquement." },
+        });
+        sourceMap[meta.source] = src;
+      }
+      const ds = await prisma.dataset.create({
+        data: {
+          slug: file.replace(/\.geojson$/, "") + "-ing",
+          name: meta.dataset || file,
+          description: `Données ingérées depuis ${meta.source}.`,
+          format: "geojson", verified: !!meta.verified,
+          verifiedAt: meta.verified ? new Date() : null,
+          themeId: theme.id, sourceId: src.id,
+        },
+      });
+      let n = 0;
+      for (const feat of feats) {
+        const p = feat.properties || {};
+        const geom = feat.geometry;
+        const isPoint = geom && geom.type === "Point";
+        await prisma.feature.create({
+          data: {
+            name: p.name || "Sans nom",
+            featureType: p.featureType || meta.theme,
+            latitude: isPoint ? geom.coordinates[1] : (p.lat ?? null),
+            longitude: isPoint ? geom.coordinates[0] : (p.lng ?? null),
+            geometry: geom && !isPoint ? JSON.stringify(geom) : null,
+            properties: JSON.stringify({ ...p, source: src.name }),
+            admin1: p.admin1 || null,
+            verified: !!p.verified,
+            datasetId: ds.id,
+          },
+        });
+        n++;
+      }
+      console.log(`   ${file}: ${n} entités (${meta.source}).`);
+    }
+  }
 
   const totals = {
     sources: await prisma.source.count(),

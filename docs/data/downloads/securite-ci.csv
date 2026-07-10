@@ -1,7 +1,7 @@
 id,nom,type,latitude,longitude,district_region,departement_commune,verifie,corps,source
-cmre66ywq002gb8aeifvt3a4r,Direction Générale de la Police Nationale,police,5.321,-4.021,Abidjan,Plateau,oui,police,OpenStreetMap
-cmre66ywt002ib8aedjk0eq91,Commissariat du 1er Arrondissement (Plateau),commissariat,5.324,-4.016,Abidjan,Plateau,oui,police,OpenStreetMap
-cmre66ywx002kb8ae6ds3ahxn,Direction Générale de la Gendarmerie,gendarmerie,5.335,-4,Abidjan,Cocody,oui,gendarmerie,OpenStreetMap
-cmre66yx0002mb8aexhl9o9eb,Groupement de Gendarmerie de Bouaké,gendarmerie,7.69,-5.035,Gbêkê,Bouaké,non,gendarmerie,OpenStreetMap
-cmre66yx4002ob8aeqxq5pg3x,Commissariat de San-Pédro,commissariat,4.75,-6.64,San-Pédro,San-Pédro,non,police,OpenStreetMap
-cmre66yx8002qb8aealrhtoe9,Office National de la Protection Civile,protection_civile,5.33,-4.005,Abidjan,Cocody,non,protection civile,OpenStreetMap
+cmreo027t002p126q85ou31w6,Direction Générale de la Police Nationale,police,5.321,-4.021,Abidjan,Plateau,oui,police,OpenStreetMap
+cmreo027y002r126qtu0pjpkx,Commissariat du 1er Arrondissement (Plateau),commissariat,5.324,-4.016,Abidjan,Plateau,oui,police,OpenStreetMap
+cmreo0282002t126qhwoxqe32,Direction Générale de la Gendarmerie,gendarmerie,5.335,-4,Abidjan,Cocody,oui,gendarmerie,OpenStreetMap
+cmreo0286002v126qmg1f0sjq,Groupement de Gendarmerie de Bouaké,gendarmerie,7.69,-5.035,Gbêkê,Bouaké,non,gendarmerie,OpenStreetMap
+cmreo028a002x126q6u63pfrf,Commissariat de San-Pédro,commissariat,4.75,-6.64,San-Pédro,San-Pédro,non,police,OpenStreetMap
+cmreo028e002z126qpc62w2jc,Office National de la Protection Civile,protection_civile,5.33,-4.005,Abidjan,Cocody,non,protection civile,OpenStreetMap
