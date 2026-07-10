@@ -57,6 +57,16 @@ function slugify(s) {
 }
 
 async function main() {
+  // En déploiement (Vercel), on ne (re)charge les données de référence que si la
+  // base est vide, afin de préserver les comptes utilisateurs entre déploiements.
+  if (process.env.SEED_SKIP_IF_EXISTS === "1") {
+    const n = await prisma.source.count().catch(() => 0);
+    if (n > 0) {
+      console.log("Base déjà initialisée — seed ignoré.");
+      return;
+    }
+  }
+
   console.log("→ Nettoyage…");
   await prisma.download.deleteMany();
   await prisma.feature.deleteMany();

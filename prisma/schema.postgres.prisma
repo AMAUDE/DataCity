@@ -1,0 +1,97 @@
+// Variante PostgreSQL du schéma — utilisée pour le déploiement Vercel.
+// NE PAS modifier séparément : les modèles doivent rester identiques à
+// prisma/schema.prisma (seuls le provider et binaryTargets diffèrent).
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  role      String   @default("user") // user | admin
+  createdAt DateTime @default(now())
+  downloads Download[]
+}
+
+// Source de données : institution / organisme fournisseur (multi-sources)
+model Source {
+  id           String    @id @default(cuid())
+  name         String    @unique
+  organization String?
+  url          String?
+  license      String?
+  reliability  Int       @default(3) // 1..5 note de fiabilité
+  description  String?
+  createdAt    DateTime  @default(now())
+  datasets     Dataset[]
+}
+
+// Thématique : regroupement métier des jeux de données
+model Theme {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  category    String    // "infrastructure" | "limites"
+  icon        String?
+  description String?
+  color       String?
+  datasets    Dataset[]
+}
+
+// Jeu de données : issu d'une source, dans un format, avec état de vérification
+model Dataset {
+  id             String    @id @default(cuid())
+  slug           String    @unique
+  name           String
+  description    String?
+  format         String    @default("geojson") // geojson | csv | json
+  verified       Boolean   @default(false)
+  verifiedAt     DateTime?
+  verifiedNote   String?
+  updatedAt      DateTime  @updatedAt
+  createdAt      DateTime  @default(now())
+  themeId        String
+  theme          Theme     @relation(fields: [themeId], references: [id], onDelete: Cascade)
+  sourceId       String
+  source         Source    @relation(fields: [sourceId], references: [id])
+  features       Feature[]
+  downloads      Download[]
+}
+
+// Entité géographique unitaire (école, hôpital, limite administrative, ...)
+model Feature {
+  id           String   @id @default(cuid())
+  name         String
+  featureType  String   // ex: "ecole", "hopital", "region", "pays"...
+  latitude     Float?
+  longitude    Float?
+  geometry     String?  // GeoJSON geometry (Polygon/MultiPolygon) en texte
+  properties   String?  // attributs additionnels (JSON en texte)
+  admin1       String?  // District / Région rattaché (jointure)
+  admin2       String?  // Département / commune
+  verified     Boolean  @default(true)
+  datasetId    String
+  dataset      Dataset  @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+
+  @@index([featureType])
+  @@index([admin1])
+}
+
+// Journal des téléchargements (traçabilité, utilisateur identifié requis)
+model Download {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  datasetId  String
+  dataset    Dataset  @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+  format     String
+  createdAt  DateTime @default(now())
+}

@@ -58,53 +58,60 @@ Toutes les fonctionnalités (authentification, import, téléchargement identifi
 Vercel exécute Next.js, mais **ne persiste pas SQLite** : il faut une base **Postgres**
 hébergée (gratuite chez Neon ou Vercel Postgres).
 
-### 1. Créer une base Postgres
+**Le dépôt est déjà prêt pour Vercel — aucune modification de code n'est requise.**
+Le fichier `vercel.json` fournit automatiquement, à chaque déploiement :
 
-- **Neon** (https://neon.tech) → créez un projet → copiez la chaîne
-  `postgresql://…` (avec `?sslmode=require`), **ou**
-- **Vercel Postgres** (onglet *Storage* du projet Vercel).
+1. la génération du client Prisma avec la variante `prisma/schema.postgres.prisma` ;
+2. la synchronisation du schéma sur votre base (`prisma db push`) ;
+3. le chargement des données de référence **si la base est vide** (les comptes
+   utilisateurs sont donc préservés entre les déploiements) ;
+4. le build Next.js.
 
-### 2. Adapter Prisma au Postgres
+Vous n'avez donc que **3 choses à faire** :
 
-Dans `prisma/schema.prisma`, changez **une seule ligne** :
+### 1. Créer une base Postgres (gratuite)
 
-```prisma
-datasource db {
-  provider = "postgresql"   // au lieu de "sqlite"
-  url      = env("DATABASE_URL")
-}
-```
+- **Neon** (https://neon.tech) → *New Project* → copiez la chaîne de connexion
+  `postgresql://…?sslmode=require`, **ou**
+- **Vercel Postgres** : depuis le projet Vercel, onglet *Storage → Create Database*
+  (la variable `DATABASE_URL` est alors ajoutée automatiquement).
 
-Puis initialisez la base distante **une fois**, depuis votre machine :
-
-```bash
-export DATABASE_URL="postgresql://…votre-url-neon…"
-npx prisma db push
-node prisma/seed.mjs
-```
-
-### 3. Déployer sur Vercel
+### 2. Importer le dépôt sur Vercel
 
 1. https://vercel.com → **Add New… → Project → Import Git Repository** → choisissez
-   `AMAUDE/DataCity`.
-2. Framework : **Next.js** (détecté automatiquement).
-3. **Environment Variables** :
-   - `DATABASE_URL` = votre URL Postgres
-   - `AUTH_SECRET` = une longue chaîne aléatoire (ex. `openssl rand -base64 32`)
-4. **Deploy**. Vercel construit et publie sur `https://<projet>.vercel.app`.
+   `AMAUDE/DataCity` (branche `claude/geographic-data-library-o0329j` ou `main`).
+2. Framework : **Next.js** (détecté automatiquement). Ne touchez pas au *Build Command*
+   (il est fourni par `vercel.json`).
+
+### 3. Renseigner les variables d'environnement
+
+Dans **Settings → Environment Variables** :
+
+| Nom | Valeur |
+|---|---|
+| `DATABASE_URL` | votre URL Postgres Neon (ou auto si Vercel Postgres) |
+| `AUTH_SECRET` | une longue chaîne aléatoire — ex. `openssl rand -base64 32` |
+
+Puis **Deploy**. Au bout de ~1–2 min, la plateforme est publiée sur
+`https://<projet>.vercel.app`.
 
 > Le **premier compte** créé via `/register` devient administrateur et peut importer
 > des données depuis `/admin/import`.
 
-#### En cas d'erreur de moteur Prisma sur Vercel
+### Recharger les données de référence (optionnel)
 
-Ajoutez la cible binaire dans le générateur de `prisma/schema.prisma` :
+Le seed est ignoré si la base contient déjà des données. Pour forcer un rechargement
+complet des données de référence (efface et recharge sources/thématiques/entités) :
 
-```prisma
-generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = ["native", "rhel-openssl-3.0.x"]
-}
+```bash
+export DATABASE_URL="postgresql://…votre-url…"
+node prisma/seed.mjs        # sans SEED_SKIP_IF_EXISTS → réinitialise les données
 ```
 
-puis redéployez.
+### Notes
+
+- `prisma/schema.postgres.prisma` est une copie de `prisma/schema.prisma` avec
+  `provider = "postgresql"` et `binaryTargets` adaptés à Vercel. Gardez les deux
+  fichiers synchronisés si vous modifiez les modèles.
+- Le développement local et la vitrine GitHub Pages continuent d'utiliser SQLite
+  (`prisma/schema.prisma`), sans changement.
