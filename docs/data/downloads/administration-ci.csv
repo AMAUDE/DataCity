@@ -1,0 +1,9 @@
+id,nom,type,latitude,longitude,district_region,departement_commune,verifie,portee,source
+cmre66yvx0020b8aestty1qs3,Présidence de la République,institution,5.323,-4.017,Abidjan,Plateau,oui,nationale,Institut National de la Statistique (INS-CI)
+cmre66yw00022b8aeakwg3zmi,Primature,institution,5.325,-4.015,Abidjan,Plateau,oui,nationale,Institut National de la Statistique (INS-CI)
+cmre66yw40024b8ael2edntu6,Assemblée Nationale,institution,5.3195,-4.013,Abidjan,Plateau,oui,nationale,Institut National de la Statistique (INS-CI)
+cmre66yw80026b8aelqpjccc3,Préfecture d'Abidjan,prefecture,5.328,-4.02,Abidjan,Plateau,oui,district,Institut National de la Statistique (INS-CI)
+cmre66ywb0028b8aei32l1ywc,Préfecture de Yamoussoukro,prefecture,6.8276,-5.2893,Yamoussoukro,Yamoussoukro,oui,district,Institut National de la Statistique (INS-CI)
+cmre66ywf002ab8ae3qgrd0s3,Préfecture de Bouaké,prefecture,7.6939,-5.03,Gbêkê,Bouaké,oui,région,Institut National de la Statistique (INS-CI)
+cmre66ywj002cb8aejcoao9dz,Préfecture de Korhogo,prefecture,9.458,-5.6296,Poro,Korhogo,oui,région,Institut National de la Statistique (INS-CI)
+cmre66ywm002eb8aek8hcufts,Mairie du Plateau,mairie,5.326,-4.018,Abidjan,Plateau,oui,communale,Institut National de la Statistique (INS-CI)

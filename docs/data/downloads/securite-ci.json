@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Direction Générale de la Police Nationale",
+    "type": "police",
+    "latitude": 5.321,
+    "longitude": -4.021,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "corps": "police",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Commissariat du 1er Arrondissement (Plateau)",
+    "type": "commissariat",
+    "latitude": 5.324,
+    "longitude": -4.016,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "corps": "police",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Direction Générale de la Gendarmerie",
+    "type": "gendarmerie",
+    "latitude": 5.335,
+    "longitude": -4,
+    "admin1": "Abidjan",
+    "admin2": "Cocody",
+    "verified": true,
+    "properties": {
+      "corps": "gendarmerie",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Groupement de Gendarmerie de Bouaké",
+    "type": "gendarmerie",
+    "latitude": 7.69,
+    "longitude": -5.035,
+    "admin1": "Gbêkê",
+    "admin2": "Bouaké",
+    "verified": false,
+    "properties": {
+      "corps": "gendarmerie",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Commissariat de San-Pédro",
+    "type": "commissariat",
+    "latitude": 4.75,
+    "longitude": -6.64,
+    "admin1": "San-Pédro",
+    "admin2": "San-Pédro",
+    "verified": false,
+    "properties": {
+      "corps": "police",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Office National de la Protection Civile",
+    "type": "protection_civile",
+    "latitude": 5.33,
+    "longitude": -4.005,
+    "admin1": "Abidjan",
+    "admin2": "Cocody",
+    "verified": false,
+    "properties": {
+      "corps": "protection civile",
+      "source": "OpenStreetMap"
+    }
+  }
+]

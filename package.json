@@ -11,7 +11,8 @@
     "postinstall": "prisma generate",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.mjs",
-    "setup": "prisma db push && node prisma/seed.mjs"
+    "setup": "prisma db push && node prisma/seed.mjs",
+    "export:static": "node scripts/export-static.mjs"
   },
   "prisma": {
     "seed": "node prisma/seed.mjs"

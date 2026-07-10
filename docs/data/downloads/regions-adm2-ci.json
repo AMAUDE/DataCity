@@ -1,0 +1,431 @@
+[
+  {
+    "name": "Agneby-Tiassa",
+    "type": "region",
+    "latitude": 5.884727812918224,
+    "longitude": -4.450036346487829,
+    "admin1": "Agneby-Tiassa",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B52449815511854"
+    }
+  },
+  {
+    "name": "Bafing",
+    "type": "region",
+    "latitude": 8.358426762071165,
+    "longitude": -7.636127452891102,
+    "admin1": "Bafing",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B37750272367318"
+    }
+  },
+  {
+    "name": "Bagoue",
+    "type": "region",
+    "latitude": 10.00419076595417,
+    "longitude": -6.486974185484127,
+    "admin1": "Bagoue",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B26044148659027"
+    }
+  },
+  {
+    "name": "Belier",
+    "type": "region",
+    "latitude": 6.845538507115878,
+    "longitude": -5.019986148869449,
+    "admin1": "Belier",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B5123145245776"
+    }
+  },
+  {
+    "name": "Bere",
+    "type": "region",
+    "latitude": 8.424663530809354,
+    "longitude": -6.121003376990656,
+    "admin1": "Bere",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B43857880322183"
+    }
+  },
+  {
+    "name": "Bounkani",
+    "type": "region",
+    "latitude": 9.077314059112325,
+    "longitude": -3.584473188994684,
+    "admin1": "Bounkani",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B90856530326373"
+    }
+  },
+  {
+    "name": "Cavally",
+    "type": "region",
+    "latitude": 6.396239480164637,
+    "longitude": -7.93025790665694,
+    "admin1": "Cavally",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B42717034718743"
+    }
+  },
+  {
+    "name": "District Autonome D'Abidjan",
+    "type": "region",
+    "latitude": 5.456438214710454,
+    "longitude": -4.031644156669639,
+    "admin1": "District Autonome D'Abidjan",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B76853064397847"
+    }
+  },
+  {
+    "name": "District Autonome De Yamoussoukro",
+    "type": "region",
+    "latitude": 6.859585182190526,
+    "longitude": -5.216162064785665,
+    "admin1": "District Autonome De Yamoussoukro",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B30232425959699"
+    }
+  },
+  {
+    "name": "Folon",
+    "type": "region",
+    "latitude": 10.09114909684824,
+    "longitude": -7.369190261533163,
+    "admin1": "Folon",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B69523806833990"
+    }
+  },
+  {
+    "name": "Gbeke",
+    "type": "region",
+    "latitude": 7.705047737341137,
+    "longitude": -5.164130660490915,
+    "admin1": "Gbeke",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B94469137469464"
+    }
+  },
+  {
+    "name": "Gbokle",
+    "type": "region",
+    "latitude": 5.316250609125889,
+    "longitude": -6.015368458635908,
+    "admin1": "Gbokle",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B37905317988050"
+    }
+  },
+  {
+    "name": "Goh",
+    "type": "region",
+    "latitude": 6.212528530722263,
+    "longitude": -5.735855986607364,
+    "admin1": "Goh",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B83650084589555"
+    }
+  },
+  {
+    "name": "Gontougo",
+    "type": "region",
+    "latitude": 7.954110843416875,
+    "longitude": -3.524925816282193,
+    "admin1": "Gontougo",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B5040161076408"
+    }
+  },
+  {
+    "name": "Grands Ponts",
+    "type": "region",
+    "latitude": 5.427030436451663,
+    "longitude": -4.911245895955964,
+    "admin1": "Grands Ponts",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B83353125268201"
+    }
+  },
+  {
+    "name": "Guemon",
+    "type": "region",
+    "latitude": 7.124159539284554,
+    "longitude": -7.344510174965978,
+    "admin1": "Guemon",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B22329502030217"
+    }
+  },
+  {
+    "name": "Hambol",
+    "type": "region",
+    "latitude": 8.615285616080273,
+    "longitude": -4.884498660003548,
+    "admin1": "Hambol",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B80955316471767"
+    }
+  },
+  {
+    "name": "Haut-Sassandra",
+    "type": "region",
+    "latitude": 7.099651067123827,
+    "longitude": -6.767389327368035,
+    "admin1": "Haut-Sassandra",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B13622385448205"
+    }
+  },
+  {
+    "name": "Iffou",
+    "type": "region",
+    "latitude": 7.515394977343394,
+    "longitude": -4.025466295203814,
+    "admin1": "Iffou",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B12556457947993"
+    }
+  },
+  {
+    "name": "Indenie-Djuablin",
+    "type": "region",
+    "latitude": 6.631852840304391,
+    "longitude": -3.478694071655906,
+    "admin1": "Indenie-Djuablin",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B87987908031267"
+    }
+  },
+  {
+    "name": "Kabadougou",
+    "type": "region",
+    "latitude": 9.320482109878496,
+    "longitude": -7.359707054976474,
+    "admin1": "Kabadougou",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B2974603948771"
+    }
+  },
+  {
+    "name": "Loh-Djiboua",
+    "type": "region",
+    "latitude": 5.61298597920173,
+    "longitude": -5.386878131823478,
+    "admin1": "Loh-Djiboua",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B50838995581112"
+    }
+  },
+  {
+    "name": "Marahoue",
+    "type": "region",
+    "latitude": 7.154059840648789,
+    "longitude": -5.750125567825908,
+    "admin1": "Marahoue",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B99867209198649"
+    }
+  },
+  {
+    "name": "Me",
+    "type": "region",
+    "latitude": 5.877807624081712,
+    "longitude": -3.68903238281121,
+    "admin1": "Me",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B88194950838049"
+    }
+  },
+  {
+    "name": "Nawa",
+    "type": "region",
+    "latitude": 5.711662295029751,
+    "longitude": -6.503693323134603,
+    "admin1": "Nawa",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B56207519899242"
+    }
+  },
+  {
+    "name": "Poro",
+    "type": "region",
+    "latitude": 9.5220906418568,
+    "longitude": -5.732308007414815,
+    "admin1": "Poro",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B2900878653745"
+    }
+  },
+  {
+    "name": "San Pedro",
+    "type": "region",
+    "latitude": 5.077378404194916,
+    "longitude": -7.086779593199945,
+    "admin1": "San Pedro",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B43081365176028"
+    }
+  },
+  {
+    "name": "Sud-Comoe",
+    "type": "region",
+    "latitude": 5.503839942235796,
+    "longitude": -3.222363108888558,
+    "admin1": "Sud-Comoe",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B87421109468433"
+    }
+  },
+  {
+    "name": "Tchologo",
+    "type": "region",
+    "latitude": 9.555979809264274,
+    "longitude": -4.879551863488867,
+    "admin1": "Tchologo",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B18937667882346"
+    }
+  },
+  {
+    "name": "Tonkpi",
+    "type": "region",
+    "latitude": 7.345078383045245,
+    "longitude": -7.855937354455299,
+    "admin1": "Tonkpi",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B98350089255378"
+    }
+  },
+  {
+    "name": "Worodougou",
+    "type": "region",
+    "latitude": 8.59068669154566,
+    "longitude": -6.787040430538805,
+    "admin1": "Worodougou",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B81277132888560"
+    }
+  },
+  {
+    "name": "N'Zi",
+    "type": "region",
+    "latitude": 6.878798072575642,
+    "longitude": -4.648671915705526,
+    "admin1": "N'Zi",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B73875625736421"
+    }
+  },
+  {
+    "name": "Moronou",
+    "type": "region",
+    "latitude": 6.626723279262389,
+    "longitude": -4.306536456363585,
+    "admin1": "Moronou",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM2",
+      "shapeID": "98640826B53162767921513"
+    }
+  }
+]

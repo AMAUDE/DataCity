@@ -1,0 +1,11 @@
+id,nom,type,latitude,longitude,district_region,departement_commune,verifie,niveau,source
+cmre66yux001gb8aee0pxxmej,CHU de Cocody,chu,5.348,-3.986,Abidjan,Cocody,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
+cmre66yv1001ib8ae2d6bjp17,CHU de Treichville,chu,5.293,-4.002,Abidjan,Treichville,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
+cmre66yv4001kb8aeh7onvsaa,CHU de Yopougon,chu,5.34,-4.085,Abidjan,Yopougon,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
+cmre66yv8001mb8ae7mria7pi,Institut de Cardiologie d'Abidjan,institut,5.349,-3.988,Abidjan,Cocody,oui,spécialisé,Ministère de la Santé et de l'Hygiène Publique
+cmre66yvb001ob8aetwpju3wj,CHU de Bouaké,chu,7.69,-5.03,Gbêkê,Bouaké,oui,tertiaire,Ministère de la Santé et de l'Hygiène Publique
+cmre66yvf001qb8aed6cz9m9w,CHR de Daloa,chr,6.8774,-6.4502,Haut-Sassandra,Daloa,oui,régional,Ministère de la Santé et de l'Hygiène Publique
+cmre66yvj001sb8aewfgg9kcb,CHR de Korhogo,chr,9.458,-5.6296,Poro,Korhogo,oui,régional,Ministère de la Santé et de l'Hygiène Publique
+cmre66yvn001ub8aeb1tgrpns,CHR de San-Pédro,chr,4.7485,-6.6363,San-Pédro,San-Pédro,oui,régional,Ministère de la Santé et de l'Hygiène Publique
+cmre66yvq001wb8aeedicwqh4,CHR de Man,chr,7.4125,-7.5538,Tonkpi,Man,oui,régional,Ministère de la Santé et de l'Hygiène Publique
+cmre66yvt001yb8aeni67wlkl,CHR d'Abengourou,chr,6.7297,-3.4964,Indénié-Djuablin,Abengourou,non,régional,OpenStreetMap

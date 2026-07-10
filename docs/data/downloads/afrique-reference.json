@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Afrique",
+    "type": "continent",
+    "latitude": 6.5,
+    "longitude": 8,
+    "admin1": null,
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "region": "Afrique de l'Ouest",
+      "zone_economique": "CEDEAO / UEMOA"
+    }
+  }
+]

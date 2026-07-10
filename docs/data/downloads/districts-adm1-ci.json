@@ -1,0 +1,184 @@
+[
+  {
+    "name": "Bas-Sassandra",
+    "type": "district",
+    "latitude": 5.34835355938184,
+    "longitude": -6.715871282946861,
+    "admin1": "Bas-Sassandra",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B96959932745266"
+    }
+  },
+  {
+    "name": "Denguele",
+    "type": "district",
+    "latitude": 9.55612880818134,
+    "longitude": -7.327692622031486,
+    "admin1": "Denguele",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B12160353323799"
+    }
+  },
+  {
+    "name": "District Autonome D'Abidjan",
+    "type": "district",
+    "latitude": 5.455369505855253,
+    "longitude": -4.028274072248822,
+    "admin1": "District Autonome D'Abidjan",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B76853064397847"
+    }
+  },
+  {
+    "name": "District Autonome De Yamoussoukro",
+    "type": "district",
+    "latitude": 6.858392246641197,
+    "longitude": -5.218769534138706,
+    "admin1": "District Autonome De Yamoussoukro",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B30232425959699"
+    }
+  },
+  {
+    "name": "Goh-Djiboua",
+    "type": "district",
+    "latitude": 5.809990297757267,
+    "longitude": -5.528362551427699,
+    "admin1": "Goh-Djiboua",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B34711482467037"
+    }
+  },
+  {
+    "name": "Lacs",
+    "type": "district",
+    "latitude": 7.145571461798714,
+    "longitude": -4.485768719945141,
+    "admin1": "Lacs",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B20352934117266"
+    }
+  },
+  {
+    "name": "Montagnes",
+    "type": "district",
+    "latitude": 6.934795316285243,
+    "longitude": -7.752073659821709,
+    "admin1": "Montagnes",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B69310198422077"
+    }
+  },
+  {
+    "name": "Sassandra-Marahoue",
+    "type": "district",
+    "latitude": 7.122221113657075,
+    "longitude": -6.274161531036566,
+    "admin1": "Sassandra-Marahoue",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B74959515955757"
+    }
+  },
+  {
+    "name": "Savanes",
+    "type": "district",
+    "latitude": 9.572482741342386,
+    "longitude": -5.451451557669833,
+    "admin1": "Savanes",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B28791092437733"
+    }
+  },
+  {
+    "name": "Valle Du Bandama",
+    "type": "district",
+    "latitude": 8.383731147014316,
+    "longitude": -4.97548857852992,
+    "admin1": "Valle Du Bandama",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B62906982633778"
+    }
+  },
+  {
+    "name": "Woroba",
+    "type": "district",
+    "latitude": 8.404008064637338,
+    "longitude": -7.019215737242329,
+    "admin1": "Woroba",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B58892240487392"
+    }
+  },
+  {
+    "name": "Zanzan",
+    "type": "district",
+    "latitude": 8.588659913523736,
+    "longitude": -3.610335988609427,
+    "admin1": "Zanzan",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B79983119233374"
+    }
+  },
+  {
+    "name": "Lagunes",
+    "type": "district",
+    "latitude": 5.767246913347036,
+    "longitude": -4.217729757775837,
+    "admin1": "Lagunes",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B73612976130091"
+    }
+  },
+  {
+    "name": "Comoe",
+    "type": "district",
+    "latitude": 6.182570449260337,
+    "longitude": -3.397934566427574,
+    "admin1": "Comoe",
+    "admin2": null,
+    "verified": true,
+    "properties": {
+      "niveau": "ADM1",
+      "shapeID": "83157122B96325295181308"
+    }
+  }
+]

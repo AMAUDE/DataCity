@@ -1,0 +1,8 @@
+id,nom,type,latitude,longitude,district_region,departement_commune,verifie,categorie,source
+cmre66yxx0034b8aecggbhcj7,BCEAO — Direction Nationale (Abidjan),banque_centrale,5.325,-4.022,Abidjan,Plateau,oui,banque centrale,BCEAO
+cmre66yy00036b8aejxn62ega,BRVM — Bourse Régionale des Valeurs Mobilières,bourse,5.323,-4.02,Abidjan,Plateau,oui,marché financier,BCEAO
+cmre66yy40038b8aevagkk47f,Direction Générale du Trésor Public,tresor,5.327,-4.0175,Abidjan,Plateau,oui,trésor,BCEAO
+cmre66yy8003ab8aedjhf66zp,Siège SGCI (Société Générale),banque,5.3255,-4.0185,Abidjan,Plateau,non,banque commerciale,OpenStreetMap
+cmre66yyb003cb8ae0uq6qb9q,Siège Ecobank Côte d'Ivoire,banque,5.324,-4.0165,Abidjan,Plateau,non,banque commerciale,OpenStreetMap
+cmre66yyf003eb8aev9t8ypk0,Siège NSIA Banque,banque,5.3235,-4.0155,Abidjan,Plateau,non,banque commerciale,OpenStreetMap
+cmre66yyj003gb8aeswc3f14k,Agence BCEAO de Bouaké,banque_centrale,7.691,-5.032,Gbêkê,Bouaké,oui,banque centrale,BCEAO

@@ -1,0 +1,80 @@
+[
+  {
+    "name": "État-Major Général des Armées",
+    "type": "etat_major",
+    "latitude": 5.319,
+    "longitude": -4.019,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "branche": "interarmées",
+      "source": "Institut National de la Statistique (INS-CI)"
+    }
+  },
+  {
+    "name": "Camp militaire de Gallieni",
+    "type": "camp",
+    "latitude": 5.321,
+    "longitude": -4.023,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "branche": "armée de terre",
+      "source": "Institut National de la Statistique (INS-CI)"
+    }
+  },
+  {
+    "name": "Camp militaire d'Akouédo",
+    "type": "camp",
+    "latitude": 5.383,
+    "longitude": -3.92,
+    "admin1": "Abidjan",
+    "admin2": "Cocody",
+    "verified": false,
+    "properties": {
+      "branche": "armée de terre",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Base Aérienne d'Abidjan (Port-Bouët)",
+    "type": "base_aerienne",
+    "latitude": 5.261,
+    "longitude": -3.926,
+    "admin1": "Abidjan",
+    "admin2": "Port-Bouët",
+    "verified": true,
+    "properties": {
+      "branche": "armée de l'air",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Base Navale d'Abidjan",
+    "type": "base_navale",
+    "latitude": 5.27,
+    "longitude": -4.01,
+    "admin1": "Abidjan",
+    "admin2": "Treichville",
+    "verified": false,
+    "properties": {
+      "branche": "marine",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Académie Militaire de Zambakro",
+    "type": "academie",
+    "latitude": 6.75,
+    "longitude": -5.4,
+    "admin1": "Yamoussoukro",
+    "admin2": "Yamoussoukro",
+    "verified": false,
+    "properties": {
+      "branche": "formation",
+      "source": "OpenStreetMap"
+    }
+  }
+]

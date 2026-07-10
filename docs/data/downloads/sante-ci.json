@@ -1,0 +1,132 @@
+[
+  {
+    "name": "CHU de Cocody",
+    "type": "chu",
+    "latitude": 5.348,
+    "longitude": -3.986,
+    "admin1": "Abidjan",
+    "admin2": "Cocody",
+    "verified": true,
+    "properties": {
+      "niveau": "tertiaire",
+      "source": "Ministère de la Santé et de l'Hygiène Publique"
+    }
+  },
+  {
+    "name": "CHU de Treichville",
+    "type": "chu",
+    "latitude": 5.293,
+    "longitude": -4.002,
+    "admin1": "Abidjan",
+    "admin2": "Treichville",
+    "verified": true,
+    "properties": {
+      "niveau": "tertiaire",
+      "source": "Ministère de la Santé et de l'Hygiène Publique"
+    }
+  },
+  {
+    "name": "CHU de Yopougon",
+    "type": "chu",
+    "latitude": 5.34,
+    "longitude": -4.085,
+    "admin1": "Abidjan",
+    "admin2": "Yopougon",
+    "verified": true,
+    "properties": {
+      "niveau": "tertiaire",
+      "source": "Ministère de la Santé et de l'Hygiène Publique"
+    }
+  },
+  {
+    "name": "Institut de Cardiologie d'Abidjan",
+    "type": "institut",
+    "latitude": 5.349,
+    "longitude": -3.988,
+    "admin1": "Abidjan",
+    "admin2": "Cocody",
+    "verified": true,
+    "properties": {
+      "niveau": "spécialisé",
+      "source": "Ministère de la Santé et de l'Hygiène Publique"
+    }
+  },
+  {
+    "name": "CHU de Bouaké",
+    "type": "chu",
+    "latitude": 7.69,
+    "longitude": -5.03,
+    "admin1": "Gbêkê",
+    "admin2": "Bouaké",
+    "verified": true,
+    "properties": {
+      "niveau": "tertiaire",
+      "source": "Ministère de la Santé et de l'Hygiène Publique"
+    }
+  },
+  {
+    "name": "CHR de Daloa",
+    "type": "chr",
+    "latitude": 6.8774,
+    "longitude": -6.4502,
+    "admin1": "Haut-Sassandra",
+    "admin2": "Daloa",
+    "verified": true,
+    "properties": {
+      "niveau": "régional",
+      "source": "Ministère de la Santé et de l'Hygiène Publique"
+    }
+  },
+  {
+    "name": "CHR de Korhogo",
+    "type": "chr",
+    "latitude": 9.458,
+    "longitude": -5.6296,
+    "admin1": "Poro",
+    "admin2": "Korhogo",
+    "verified": true,
+    "properties": {
+      "niveau": "régional",
+      "source": "Ministère de la Santé et de l'Hygiène Publique"
+    }
+  },
+  {
+    "name": "CHR de San-Pédro",
+    "type": "chr",
+    "latitude": 4.7485,
+    "longitude": -6.6363,
+    "admin1": "San-Pédro",
+    "admin2": "San-Pédro",
+    "verified": true,
+    "properties": {
+      "niveau": "régional",
+      "source": "Ministère de la Santé et de l'Hygiène Publique"
+    }
+  },
+  {
+    "name": "CHR de Man",
+    "type": "chr",
+    "latitude": 7.4125,
+    "longitude": -7.5538,
+    "admin1": "Tonkpi",
+    "admin2": "Man",
+    "verified": true,
+    "properties": {
+      "niveau": "régional",
+      "source": "Ministère de la Santé et de l'Hygiène Publique"
+    }
+  },
+  {
+    "name": "CHR d'Abengourou",
+    "type": "chr",
+    "latitude": 6.7297,
+    "longitude": -3.4964,
+    "admin1": "Indénié-Djuablin",
+    "admin2": "Abengourou",
+    "verified": false,
+    "properties": {
+      "niveau": "régional",
+      "source": "OpenStreetMap"
+    }
+  }
+]

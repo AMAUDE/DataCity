@@ -1,0 +1,93 @@
+[
+  {
+    "name": "BCEAO — Direction Nationale (Abidjan)",
+    "type": "banque_centrale",
+    "latitude": 5.325,
+    "longitude": -4.022,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "categorie": "banque centrale",
+      "source": "BCEAO"
+    }
+  },
+  {
+    "name": "BRVM — Bourse Régionale des Valeurs Mobilières",
+    "type": "bourse",
+    "latitude": 5.323,
+    "longitude": -4.02,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "categorie": "marché financier",
+      "source": "BCEAO"
+    }
+  },
+  {
+    "name": "Direction Générale du Trésor Public",
+    "type": "tresor",
+    "latitude": 5.327,
+    "longitude": -4.0175,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "categorie": "trésor",
+      "source": "BCEAO"
+    }
+  },
+  {
+    "name": "Siège SGCI (Société Générale)",
+    "type": "banque",
+    "latitude": 5.3255,
+    "longitude": -4.0185,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": false,
+    "properties": {
+      "categorie": "banque commerciale",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Siège Ecobank Côte d'Ivoire",
+    "type": "banque",
+    "latitude": 5.324,
+    "longitude": -4.0165,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": false,
+    "properties": {
+      "categorie": "banque commerciale",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Siège NSIA Banque",
+    "type": "banque",
+    "latitude": 5.3235,
+    "longitude": -4.0155,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": false,
+    "properties": {
+      "categorie": "banque commerciale",
+      "source": "OpenStreetMap"
+    }
+  },
+  {
+    "name": "Agence BCEAO de Bouaké",
+    "type": "banque_centrale",
+    "latitude": 7.691,
+    "longitude": -5.032,
+    "admin1": "Gbêkê",
+    "admin2": "Bouaké",
+    "verified": true,
+    "properties": {
+      "categorie": "banque centrale",
+      "source": "BCEAO"
+    }
+  }
+]

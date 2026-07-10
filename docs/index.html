@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DataCity — Bibliothèque géographique de Côte d'Ivoire</title>
+<meta name="description" content="Base de référence multi-sources des données géographiques vérifiées de Côte d'Ivoire : infrastructures, limites administratives, cartographie et téléchargement." />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root{--orange:#F77F00;--green:#009E60;--bg:#0b1220;--panel:#111a2b;--line:rgba(255,255,255,.06);--muted:#94a3b8;--text:#e6edf6}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+  header{position:sticky;top:0;z-index:600;background:rgba(11,18,32,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:6px;font-weight:800;font-size:18px}
+  .flag{display:inline-flex}.flag i{width:10px;height:22px;border-radius:3px;margin-left:-4px}
+  .flag i:first-child{margin-left:0;background:var(--orange)}.flag i:nth-child(2){background:#fff}.flag i:nth-child(3){background:var(--green)}
+  .navlinks{display:flex;gap:4px;flex-wrap:wrap}
+  .navlinks a{padding:8px 12px;border-radius:8px;font-size:14px;color:#cbd5e1;cursor:pointer}
+  .navlinks a:hover{background:rgba(255,255,255,.06)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px}
+  .btn{display:inline-flex;align-items:center;gap:6px;border-radius:10px;padding:9px 14px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid var(--line);color:#e2e8f0;background:transparent}
+  .btn:hover{background:rgba(255,255,255,.06)}
+  .btn.primary{background:var(--orange);border-color:var(--orange);color:#fff}
+  .btn.small{padding:6px 10px;font-size:12px}
+  .badge{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:600}
+  input,select{width:100%;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:var(--text);font-size:14px;outline:none}
+  input:focus,select:focus{border-color:var(--orange)}
+  .hero h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:12px 0;max-width:820px}
+  .hero p{color:#cbd5e1;max-width:680px;font-size:clamp(15px,2vw,18px)}
+  .grid{display:grid;gap:14px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  @media(min-width:640px){.stats{grid-template-columns:repeat(5,1fr)}}
+  .stat{text-align:center;padding:16px}
+  .stat b{display:block;font-size:26px}.stat span{color:var(--muted);font-size:13px}
+  .themes{grid-template-columns:repeat(2,1fr)}
+  @media(min-width:640px){.themes{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:1024px){.themes{grid-template-columns:repeat(5,1fr)}}
+  .theme{padding:16px;cursor:pointer;transition:border-color .15s}
+  .theme:hover{border-color:rgba(247,127,0,.5)}
+  .theme .ic{font-size:26px}.theme .nm{font-weight:600;margin-top:8px;font-size:14px}.theme .mt{color:#64748b;font-size:12px;margin-top:4px}
+  .controls{grid-template-columns:1fr}
+  @media(min-width:640px){.controls{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.controls{grid-template-columns:repeat(4,1fr)}}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:9px 12px}
+  thead{background:rgba(255,255,255,.05);color:#cbd5e1}
+  tbody tr{border-top:1px solid var(--line)}tbody tr:hover{background:rgba(255,255,255,.04)}
+  .tablewrap{overflow-x:auto}
+  #map{height:70vh;width:100%;border-radius:14px}
+  .leaflet-container{background:var(--bg)}
+  .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--panel);color:var(--text)}
+  section{margin:40px 0}
+  h2{font-size:22px}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .sep{color:#475569}
+  .ds{padding:18px}
+  .muted{color:var(--muted)}
+  .hide{display:none}
+  footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:13px;margin-top:30px}
+  .demo-note{background:rgba(247,127,0,.1);border:1px solid rgba(247,127,0,.3);color:#fed7aa;border-radius:12px;padding:12px 14px;font-size:13px}
+  .toggle{display:flex;gap:4px}
+  .toggle .btn.active{background:var(--orange);border-color:var(--orange);color:#fff}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="brand"><span class="flag"><i></i><i></i><i></i></span> DataCity<span style="color:var(--orange)">.ci</span></div>
+  <nav class="navlinks">
+    <a data-nav="accueil">Accueil</a>
+    <a data-nav="themes">Thématiques</a>
+    <a data-nav="explorer">Explorer</a>
+    <a data-nav="carte">Cartographie</a>
+    <a data-nav="sources">Sources</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <section class="hero" id="accueil">
+    <div class="badge" style="background:rgba(255,255,255,.05);color:#cbd5e1;margin-top:24px">🇨🇮 Plateforme dédiée à la Côte d'Ivoire</div>
+    <h1>La <span style="color:var(--orange)">donnée géographique</span> vraie, vérifiée et accessible à tous</h1>
+    <p>DataCity centralise, corrige et recoupe les données issues de multiples sources et formats pour offrir une base de référence fiable : infrastructures, limites administratives, tableaux et cartographie — le tout téléchargeable.</p>
+    <div class="row" style="margin-top:18px">
+      <a class="btn primary" data-nav="themes">Explorer les thématiques</a>
+      <a class="btn" data-nav="carte">Voir la cartographie</a>
+      <a class="btn" data-nav="explorer">Parcourir les données</a>
+    </div>
+    <div class="demo-note" style="margin-top:20px">ℹ️ Ceci est la <b>vitrine statique</b> (GitHub Pages) : consultation, cartographie et téléchargement fonctionnent. L'authentification et l'import de données nécessitent la version serveur complète (voir <code>DEPLOYMENT.md</code>).</div>
+  </section>
+
+  <section class="grid stats" id="stats"></section>
+
+  <section id="themes">
+    <div class="row" style="justify-content:space-between"><h2>Thématiques disponibles</h2></div>
+    <div class="grid themes" id="themeGrid" style="margin-top:14px"></div>
+  </section>
+
+  <section id="explorer">
+    <h2>Explorer les données</h2>
+    <p class="muted">Filtrez, recherchez et visualisez les données en table ou sur la carte.</p>
+    <div class="card" style="padding:16px;margin:14px 0">
+      <div class="grid controls">
+        <select id="fTheme"><option value="">Toutes les thématiques</option></select>
+        <input id="fQ" placeholder="Rechercher un nom…" />
+        <select id="fAdmin"><option value="">Tous districts/régions</option></select>
+        <label class="row" style="color:#cbd5e1;font-size:14px"><input type="checkbox" id="fVerif" style="width:auto" /> Vérifiées uniquement</label>
+      </div>
+      <div class="row" style="justify-content:space-between;margin-top:12px">
+        <span class="muted" id="count">—</span>
+        <div class="toggle">
+          <button class="btn small active" id="btnTable">Table</button>
+          <button class="btn small" id="btnMap">Carte</button>
+        </div>
+      </div>
+    </div>
+    <div id="tableView" class="card tablewrap">
+      <table><thead><tr>
+        <th>Nom</th><th>Type</th><th class="c-sm">District/Région</th><th class="c-md">Coordonnées</th><th class="c-lg">Thématique</th><th>État</th>
+      </tr></thead><tbody id="tbody"></tbody></table>
+      <div class="row" id="pager" style="justify-content:space-between;padding:10px 12px;border-top:1px solid var(--line)"></div>
+    </div>
+    <div id="mapView" class="card hide" style="padding:8px"><div id="map"></div></div>
+  </section>
+
+  <section id="downloads">
+    <h2>Jeux de données & téléchargement</h2>
+    <p class="muted">Chaque jeu porte sa source et son état de vérification. Formats : GeoJSON, CSV, JSON.</p>
+    <div class="grid" id="dsList" style="grid-template-columns:1fr;margin-top:14px"></div>
+  </section>
+
+  <section id="sources">
+    <h2>Sources de données</h2>
+    <p class="muted">Plateforme multi-sources : chaque donnée est rattachée à un fournisseur et à une note de fiabilité.</p>
+    <div class="grid" id="srcList" style="grid-template-columns:1fr;margin-top:14px"></div>
+  </section>
+</main>
+
+<footer><div class="wrap row" style="justify-content:space-between">
+  <span>DataCity — Bibliothèque de référence des données géographiques de Côte d'Ivoire</span>
+  <span>Données multi-sources · vérifiées · téléchargeables</span>
+</div></footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const state={catalog:null,features:[],view:"table",page:1,perPage:25,map:null,layer:null};
+const $=(s)=>document.querySelector(s);
+const esc=(s)=>String(s??"").replace(/[&<>"]/g,(c)=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+async function load(){
+  const [c,f]=await Promise.all([
+    fetch("./data/catalog.json").then(r=>r.json()),
+    fetch("./data/features.json").then(r=>r.json()),
+  ]);
+  state.catalog=c;state.features=f;
+  renderStats();renderThemes();renderThemeFilter();renderDatasets();renderSources();renderAdmins();render();
+}
+
+function renderStats(){
+  const s=state.catalog.stats;
+  const pct=s.features?Math.round(s.verified/s.features*100):0;
+  const items=[[s.themes,"Thématiques"],[s.sources,"Sources"],[s.datasets,"Jeux de données"],[s.features,"Entités géographiques"],[pct+"%","Données vérifiées"]];
+  $("#stats").innerHTML=items.map(([v,l])=>`<div class="card stat"><b>${v}</b><span>${l}</span></div>`).join("");
+}
+function renderThemes(){
+  $("#themeGrid").innerHTML=state.catalog.themes.map(t=>{
+    const n=t.datasets.reduce((a,d)=>a+d.count,0);
+    return `<div class="card theme" data-theme="${t.slug}"><div class="ic">${t.icon}</div><div class="nm">${esc(t.name)}</div><div class="mt">${n} entités · ${t.category}</div></div>`;
+  }).join("");
+  document.querySelectorAll("[data-theme]").forEach(el=>el.onclick=()=>{$("#fTheme").value=el.dataset.theme;render();go("explorer");});
+}
+function renderThemeFilter(){
+  $("#fTheme").innerHTML='<option value="">Toutes les thématiques</option>'+state.catalog.themes.map(t=>`<option value="${t.slug}">${t.icon} ${esc(t.name)}</option>`).join("");
+}
+function renderAdmins(){
+  const s=new Set();state.features.forEach(f=>f.admin1&&s.add(f.admin1));
+  $("#fAdmin").innerHTML='<option value="">Tous districts/régions</option>'+[...s].sort().map(a=>`<option>${esc(a)}</option>`).join("");
+}
+function stars(n){let o="";for(let i=1;i<=5;i++)o+=`<span style="color:${i<=n?'var(--orange)':'#475569'}">★</span>`;return o;}
+function renderDatasets(){
+  const rows=[];
+  state.catalog.themes.forEach(t=>t.datasets.forEach(d=>rows.push({...d,theme:t.name,icon:t.icon})));
+  $("#dsList").innerHTML=rows.map(d=>`<div class="card ds">
+    <div class="row" style="justify-content:space-between">
+      <div><div style="font-weight:600">${d.icon} ${esc(d.name)}</div><div class="muted" style="font-size:13px;margin-top:3px">${esc(d.description||"")}</div></div>
+      <span class="badge" style="background:${d.verified?'rgba(34,197,94,.15)':'rgba(234,179,8,.15)'};color:${d.verified?'#4ade80':'#facc15'}">${d.verified?'✓ vérifié':'à vérifier'}</span>
+    </div>
+    <div class="row muted" style="font-size:12px;margin-top:8px"><span>Source : <b style="color:#cbd5e1">${esc(d.source)}</b></span><span class="sep">·</span><span>${d.count} entités</span><span class="sep">·</span><span>${d.format.toUpperCase()}</span></div>
+    <div class="row" style="margin-top:12px">
+      <a class="btn small" href="./data/downloads/${d.slug}.geojson" download>⬇ GeoJSON</a>
+      <a class="btn small" href="./data/downloads/${d.slug}.csv" download>⬇ CSV</a>
+      <a class="btn small" href="./data/downloads/${d.slug}.json" download>⬇ JSON</a>
+    </div></div>`).join("");
+}
+function renderSources(){
+  $("#srcList").innerHTML=state.catalog.sources.map(s=>`<div class="card ds">
+    <div class="row" style="justify-content:space-between">
+      <div><div class="row"><b>${esc(s.name)}</b> ${stars(s.reliability)}</div>
+      ${s.organization?`<div class="muted" style="font-size:12px">${esc(s.organization)}</div>`:""}
+      ${s.description?`<div class="muted" style="font-size:13px;margin-top:4px">${esc(s.description)}</div>`:""}</div>
+      <div style="text-align:right"><span class="badge" style="background:rgba(255,255,255,.05);color:#cbd5e1">${s.datasets} jeu(x)</span>${s.license?`<div class="muted" style="font-size:12px;margin-top:4px">${esc(s.license)}</div>`:""}</div>
+    </div></div>`).join("");
+}
+
+function filtered(){
+  const th=$("#fTheme").value,q=$("#fQ").value.toLowerCase(),ad=$("#fAdmin").value,vf=$("#fVerif").checked;
+  return state.features.filter(f=>{
+    if(th&&f.theme?.slug!==th)return false;
+    if(q&&!f.name.toLowerCase().includes(q))return false;
+    if(ad&&f.admin1!==ad)return false;
+    if(vf&&!f.verified)return false;
+    return true;
+  });
+}
+function render(){
+  const data=filtered();
+  $("#count").textContent=data.length+" entité(s)";
+  if(state.view==="table")renderTable(data);else renderMap(data);
+}
+function renderTable(data){
+  const pages=Math.max(1,Math.ceil(data.length/state.perPage));
+  if(state.page>pages)state.page=1;
+  const rows=data.slice((state.page-1)*state.perPage,state.page*state.perPage);
+  $("#tbody").innerHTML=rows.map(f=>`<tr>
+    <td>${esc(f.name)}</td><td class="muted">${esc(f.featureType)}</td>
+    <td class="c-sm muted">${esc(f.admin1||"—")}</td>
+    <td class="c-md muted" style="font-family:monospace;font-size:12px">${f.latitude!=null?f.latitude.toFixed(3)+", "+f.longitude.toFixed(3):"polygone"}</td>
+    <td class="c-lg"><span class="badge" style="background:${(f.theme?.color||'#888')}22;color:${f.theme?.color||'#888'}">${esc(f.theme?.name||"")}</span></td>
+    <td>${f.verified?'<span class="badge" style="background:rgba(34,197,94,.15);color:#4ade80">vérifié</span>':'<span class="badge" style="background:rgba(234,179,8,.15);color:#facc15">à vérifier</span>'}</td>
+  </tr>`).join("")||`<tr><td colspan="6" class="muted" style="text-align:center;padding:30px">Aucune donnée.</td></tr>`;
+  $("#pager").innerHTML=pages>1?`<button class="btn small" ${state.page<=1?'disabled':''} id="prev">← Précédent</button><span class="muted">Page ${state.page} / ${pages}</span><button class="btn small" ${state.page>=pages?'disabled':''} id="next">Suivant →</button>`:"";
+  if(pages>1){$("#prev").onclick=()=>{state.page--;render();};$("#next").onclick=()=>{state.page++;render();};}
+}
+function renderMap(data){
+  if(!state.map){
+    state.map=L.map("map").setView([7.54,-5.55],6);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"© OpenStreetMap",maxZoom:18}).addTo(state.map);
+    state.layer=L.layerGroup().addTo(state.map);
+  }
+  state.layer.clearLayers();const b=[];
+  data.forEach(f=>{
+    if(f.geometry&&f.geometry.type!=="Point"){
+      try{const l=L.geoJSON(f.geometry,{style:{color:f.theme?.color||"#14b8a6",weight:1.5,fillColor:f.theme?.color||"#14b8a6",fillOpacity:.12}});
+        l.bindPopup(`<b>${esc(f.name)}</b><br>${esc(f.featureType)}`);l.addTo(state.layer);
+        const bb=l.getBounds();if(bb.isValid()){b.push(bb.getNorthEast(),bb.getSouthWest());}}catch(e){}
+    }else if(f.latitude!=null){
+      const m=L.circleMarker([f.latitude,f.longitude],{radius:6,color:f.theme?.color||"#F77F00",weight:2,fillColor:f.theme?.color||"#F77F00",fillOpacity:.85});
+      const badge=f.verified?'<span style="color:#22c55e">● vérifié</span>':'<span style="color:#eab308">● à vérifier</span>';
+      m.bindPopup(`<b>${esc(f.name)}</b><br>${esc(f.featureType)} · ${esc(f.admin1||"—")}<br>${badge}`);m.addTo(state.layer);b.push([f.latitude,f.longitude]);
+    }
+  });
+  if(b.length){try{state.map.fitBounds(L.latLngBounds(b).pad(.15),{maxZoom:12});}catch(e){}}
+  setTimeout(()=>state.map.invalidateSize(),50);
+}
+
+function setView(v){
+  state.view=v;
+  $("#btnTable").classList.toggle("active",v==="table");
+  $("#btnMap").classList.toggle("active",v==="map");
+  $("#tableView").classList.toggle("hide",v!=="table");
+  $("#mapView").classList.toggle("hide",v!=="table"?false:true);
+  $("#mapView").classList.toggle("hide",v!=="map");
+  render();
+}
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});}
+
+// responsive: masquer colonnes selon largeur via classes
+const style=document.createElement("style");
+style.textContent="@media(max-width:640px){.c-sm{display:none}}@media(max-width:820px){.c-md{display:none}}@media(max-width:1024px){.c-lg{display:none}}";
+document.head.appendChild(style);
+
+$("#btnTable").onclick=()=>setView("table");
+$("#btnMap").onclick=()=>setView("map");
+["fTheme","fAdmin"].forEach(id=>$("#"+id).onchange=()=>{state.page=1;render();});
+$("#fQ").oninput=()=>{state.page=1;render();};
+$("#fVerif").onchange=()=>{state.page=1;render();};
+document.querySelectorAll("[data-nav]").forEach(el=>el.onclick=()=>go(el.dataset.nav==="carte"?"explorer":el.dataset.nav));
+document.querySelector('[data-nav="carte"]').onclick=()=>{setView("map");go("explorer");};
+
+load().catch(e=>{document.querySelector("main").innerHTML='<p style="padding:40px">Erreur de chargement des données.</p>';console.error(e);});
+</script>
+</body>
+</html>

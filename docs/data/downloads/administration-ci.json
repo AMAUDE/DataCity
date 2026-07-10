@@ -1,0 +1,106 @@
+[
+  {
+    "name": "Présidence de la République",
+    "type": "institution",
+    "latitude": 5.323,
+    "longitude": -4.017,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "portee": "nationale",
+      "source": "Institut National de la Statistique (INS-CI)"
+    }
+  },
+  {
+    "name": "Primature",
+    "type": "institution",
+    "latitude": 5.325,
+    "longitude": -4.015,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "portee": "nationale",
+      "source": "Institut National de la Statistique (INS-CI)"
+    }
+  },
+  {
+    "name": "Assemblée Nationale",
+    "type": "institution",
+    "latitude": 5.3195,
+    "longitude": -4.013,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "portee": "nationale",
+      "source": "Institut National de la Statistique (INS-CI)"
+    }
+  },
+  {
+    "name": "Préfecture d'Abidjan",
+    "type": "prefecture",
+    "latitude": 5.328,
+    "longitude": -4.02,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "portee": "district",
+      "source": "Institut National de la Statistique (INS-CI)"
+    }
+  },
+  {
+    "name": "Préfecture de Yamoussoukro",
+    "type": "prefecture",
+    "latitude": 6.8276,
+    "longitude": -5.2893,
+    "admin1": "Yamoussoukro",
+    "admin2": "Yamoussoukro",
+    "verified": true,
+    "properties": {
+      "portee": "district",
+      "source": "Institut National de la Statistique (INS-CI)"
+    }
+  },
+  {
+    "name": "Préfecture de Bouaké",
+    "type": "prefecture",
+    "latitude": 7.6939,
+    "longitude": -5.03,
+    "admin1": "Gbêkê",
+    "admin2": "Bouaké",
+    "verified": true,
+    "properties": {
+      "portee": "région",
+      "source": "Institut National de la Statistique (INS-CI)"
+    }
+  },
+  {
+    "name": "Préfecture de Korhogo",
+    "type": "prefecture",
+    "latitude": 9.458,
+    "longitude": -5.6296,
+    "admin1": "Poro",
+    "admin2": "Korhogo",
+    "verified": true,
+    "properties": {
+      "portee": "région",
+      "source": "Institut National de la Statistique (INS-CI)"
+    }
+  },
+  {
+    "name": "Mairie du Plateau",
+    "type": "mairie",
+    "latitude": 5.326,
+    "longitude": -4.018,
+    "admin1": "Abidjan",
+    "admin2": "Plateau",
+    "verified": true,
+    "properties": {
+      "portee": "communale",
+      "source": "Institut National de la Statistique (INS-CI)"
+    }
+  }
+]

@@ -1,0 +1,11 @@
+id,nom,type,latitude,longitude,district_region,departement_commune,verifie,statut,cycle,source
+cmre66ytx000wb8aeilsabmlg,Université Félix Houphouët-Boigny,universite,5.3467,-3.9869,Abidjan,Cocody,oui,public,supérieur,Ministère de l'Éducation Nationale
+cmre66yu1000yb8ae1y8fio9w,Université Nangui Abrogoua,universite,5.3838,-4,Abidjan,Abobo,oui,public,supérieur,Ministère de l'Éducation Nationale
+cmre66yu50010b8aemekse411,INP-HB (Inst. National Polytechnique),grande_ecole,6.8081,-5.243,Yamoussoukro,Yamoussoukro,oui,public,supérieur,Ministère de l'Éducation Nationale
+cmre66yu80012b8ae4gtbc5ao,Université Alassane Ouattara,universite,7.6939,-5.03,Gbêkê,Bouaké,oui,public,supérieur,Ministère de l'Éducation Nationale
+cmre66yuc0014b8aev8rhjstq,Université Jean Lorougnon Guédé,universite,6.8774,-6.4502,Haut-Sassandra,Daloa,oui,public,supérieur,Ministère de l'Éducation Nationale
+cmre66yuf0016b8ae3umppkxt,Université Péléforo Gon Coulibaly,universite,9.458,-5.6296,Poro,Korhogo,oui,public,supérieur,Ministère de l'Éducation Nationale
+cmre66yuj0018b8aelu4mxo83,Lycée Classique d'Abidjan,lycee,5.34,-4.01,Abidjan,Cocody,oui,public,secondaire,Ministère de l'Éducation Nationale
+cmre66yum001ab8ae8yf8849s,Lycée Municipal de Yopougon,lycee,5.345,-4.08,Abidjan,Yopougon,oui,public,secondaire,Ministère de l'Éducation Nationale
+cmre66yuq001cb8aerw5bt7n0,Lycée Moderne de San-Pédro,lycee,4.7485,-6.6363,San-Pédro,San-Pédro,oui,public,secondaire,Ministère de l'Éducation Nationale
+cmre66yuu001eb8aegdqk6n49,Lycée Moderne de Man,lycee,7.4125,-7.5538,Tonkpi,Man,oui,public,secondaire,Ministère de l'Éducation Nationale
