@@ -58,34 +58,43 @@ async function main() {
     prisma.feature.count({ where: { verified: true } }),
   ]);
 
-  // Fichiers téléchargeables par jeu de données (geojson / csv / json)
+  // Aperçu téléchargeable GeoJSON par jeu (borné ; données complètes via l'app)
+  const DL_CAP = 1000;
   for (const ds of datasets) {
-    const feats = await prisma.feature.findMany({ where: { datasetId: ds.id } });
+    const feats = await prisma.feature.findMany({ where: { datasetId: ds.id }, take: DL_CAP });
     const geo = featuresToGeoJSON(feats);
-    geo.metadata = { dataset: ds.name, source: ds.source.name, theme: ds.theme.name, verified: ds.verified };
+    geo.metadata = { dataset: ds.name, source: ds.source.name, theme: ds.theme.name,
+      verified: ds.verified, apercu: ds._count.features > DL_CAP ? `limité à ${DL_CAP} entités` : "complet" };
     writeFileSync(join(dlDir, `${ds.slug}.geojson`), JSON.stringify(geo));
-    writeFileSync(join(dlDir, `${ds.slug}.csv`), featuresToCSV(feats));
-    writeFileSync(join(dlDir, `${ds.slug}.json`), JSON.stringify(
-      feats.map((f) => ({
-        name: f.name, type: f.featureType, latitude: f.latitude, longitude: f.longitude,
-        admin1: f.admin1, admin2: f.admin2, verified: f.verified,
-        properties: f.properties ? JSON.parse(f.properties) : {},
-      })), null, 2));
   }
 
-  // Toutes les entités (avec géométrie) pour table + carte
+  // Entités pour table + carte. Vu le volume (77k+), on échantillonne par jeu
+  // pour l'affichage interactif (les compteurs restent les totaux réels de la base,
+  // et les téléchargements + l'app donnent accès à l'intégralité).
   const allFeatures = await prisma.feature.findMany({
     include: { dataset: { select: { slug: true, name: true, theme: { select: { slug: true, name: true, color: true } } } } },
     orderBy: { name: "asc" },
   });
-  const features = allFeatures.map((f) => ({
+  const raw = allFeatures.map((f) => ({
     id: f.id, name: f.name, featureType: f.featureType,
     latitude: f.latitude, longitude: f.longitude,
     admin1: f.admin1, admin2: f.admin2, verified: f.verified,
     theme: f.dataset.theme, datasetSlug: f.dataset.slug,
-    geometry: f.geometry ? JSON.parse(f.geometry) : null,
-    properties: f.properties ? JSON.parse(f.properties) : {},
+    // Géométrie conservée uniquement pour les districts (fond de carte).
+    geometry: f.featureType === "district" && f.geometry ? JSON.parse(f.geometry) : null,
+    properties: undefined,
   }));
+  // Échantillonnage régulier par jeu de données (max PER_DS entités chacun).
+  const PER_DS = 120;
+  const groups = {};
+  for (const f of raw) (groups[f.datasetSlug] ||= []).push(f);
+  const features = [];
+  for (const slug of Object.keys(groups)) {
+    const arr = groups[slug];
+    if (arr.length <= PER_DS) { features.push(...arr); continue; }
+    const stride = arr.length / PER_DS;
+    for (let i = 0; i < PER_DS; i++) features.push(arr[Math.floor(i * stride)]);
+  }
 
   const catalog = {
     generated: new Date().toISOString(),

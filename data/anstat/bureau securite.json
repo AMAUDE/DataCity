@@ -1,0 +1,24 @@
+{
+"type": "FeatureCollection",
+"status": "ok",
+"name": "bureau securite",
+"features": [
+{ "type": "Feature", "properties": { "name": "COMPAGNIE REPUBLICAINE DE SECURITE CRS 4", "id": 36581 }, "geometry": { "type": "Point", "coordinates": [ -5.936418, 6.125659 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU DES DOUANES DE GRABO", "id": 36293 }, "geometry": { "type": "Point", "coordinates": [ -7.495181, 4.920256 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU EAUX FORET ZEAGLO", "id": 36348 }, "geometry": { "type": "Point", "coordinates": [ -7.835207, 6.548125 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU FORESTIER DE SIKENSI", "id": 36354 }, "geometry": { "type": "Point", "coordinates": [ -4.574514, 5.672268 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU DES DOUANES DE MINIGNAN", "id": 36366 }, "geometry": { "type": "Point", "coordinates": [ -7.837082, 10.004441 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU SAPEURS POMPIERS CIVILS", "id": 36367 }, "geometry": { "type": "Point", "coordinates": [ -7.835849, 9.993626 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU DES DOUANES DE NIABLE", "id": 36368 }, "geometry": { "type": "Point", "coordinates": [ -3.264225, 6.653313 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU DE DOUANE", "id": 36372 }, "geometry": { "type": "Point", "coordinates": [ -3.196486, 7.127326 ] } },
+{ "type": "Feature", "properties": { "name": "CABINET DES EAUX ET FORET", "id": 36376 }, "geometry": { "type": "Point", "coordinates": [ -3.955945, 5.810817 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU DES EAUX ET FORETS DE BONGO", "id": 36377 }, "geometry": { "type": "Point", "coordinates": [ -3.549002, 5.513552 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU DES DOUANE DE NOE", "id": 36379 }, "geometry": { "type": "Point", "coordinates": [ -2.787245, 5.289925 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU DES DOUANES DE BIANOUAN", "id": 36382 }, "geometry": { "type": "Point", "coordinates": [ -3.189035, 6.009162 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU DES EAUX ET FORETS", "id": 36390 }, "geometry": { "type": "Point", "coordinates": [ -7.553132, 7.106927 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU DE DOUANE DE SIPILOU", "id": 36392 }, "geometry": { "type": "Point", "coordinates": [ -8.109841, 7.860622 ] } },
+{ "type": "Feature", "properties": { "name": "DOUANE IVOIRIENNES BUREAU D ASSUEFRY", "id": 36903 }, "geometry": { "type": "Point", "coordinates": [ -2.977447, 7.701842 ] } },
+{ "type": "Feature", "properties": { "name": "RHABILITATION DES BUREAUX DE POLICE DU POSTE FRONTALIER DE PROLLO", "id": 38662 }, "geometry": { "type": "Point", "coordinates": [ -7.540646, 4.433407 ] } },
+{ "type": "Feature", "properties": { "name": "CCDO", "id": 38750 }, "geometry": { "type": "Point", "coordinates": [ -5.29121, 6.825059 ] } }
+]
+}

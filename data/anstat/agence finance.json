@@ -1,0 +1,31 @@
+{
+"type": "FeatureCollection",
+"status": "ok",
+"name": "agence finance",
+"features": [
+{ "type": "Feature", "properties": { "name": "DIRECTION COOPEC DE DABOU", "id": 36864 }, "geometry": { "type": "Point", "coordinates": [ -4.372343, 5.31565 ] } },
+{ "type": "Feature", "properties": { "name": "DIRECTION REGIONALE DE LA COOPEC", "id": 36866 }, "geometry": { "type": "Point", "coordinates": [ -5.94026, 6.13253 ] } },
+{ "type": "Feature", "properties": { "name": "DIRECTION DE LA COOPEC DE BONDOUKOU", "id": 36868 }, "geometry": { "type": "Point", "coordinates": [ -2.811585, 8.032291 ] } },
+{ "type": "Feature", "properties": { "name": "MINISTERE DE L ECONOMIE ET DES FINANCES", "id": 40282 }, "geometry": { "type": "Point", "coordinates": [ -4.018337, 5.325418 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU DES CONTROLE FINANCIER", "id": 36384 }, "geometry": { "type": "Point", "coordinates": [ -3.215159, 5.465107 ] } },
+{ "type": "Feature", "properties": { "name": "CONTROLE FINANCIER", "id": 36589 }, "geometry": { "type": "Point", "coordinates": [ -5.030272, 6.561349 ] } },
+{ "type": "Feature", "properties": { "name": "CONTROLE FINANCIER DE BONDOUKOU", "id": 36590 }, "geometry": { "type": "Point", "coordinates": [ -2.794588, 8.041995 ] } },
+{ "type": "Feature", "properties": { "name": "CONTROL FINANCIER", "id": 36596 }, "geometry": { "type": "Point", "coordinates": [ -5.755854, 6.992652 ] } },
+{ "type": "Feature", "properties": { "name": "CONTROLE FINANCIER", "id": 36598 }, "geometry": { "type": "Point", "coordinates": [ -6.050693, 7.431499 ] } },
+{ "type": "Feature", "properties": { "name": "CONTROLE FINANCIER", "id": 36648 }, "geometry": { "type": "Point", "coordinates": [ -3.484099, 6.730372 ] } },
+{ "type": "Feature", "properties": { "name": "CONTROLE FINANCIER AUPRES DES DEPARTEMENTS DADZOPE AKOUPE ET YAKASSE ATTOBROU", "id": 36654 }, "geometry": { "type": "Point", "coordinates": [ -3.864316, 6.090561 ] } },
+{ "type": "Feature", "properties": { "name": "CONTROLE FINANCIER AUPRES DE LA REGION DE L IFFOU", "id": 36672 }, "geometry": { "type": "Point", "coordinates": [ -3.97887, 7.05207 ] } },
+{ "type": "Feature", "properties": { "name": "CONTROLE FINANCIER", "id": 36804 }, "geometry": { "type": "Point", "coordinates": [ -6.607815, 5.784317 ] } },
+{ "type": "Feature", "properties": { "name": "DIERCTION CONTROLE FINANCIER ODIENNE  MINIGNAN", "id": 36879 }, "geometry": { "type": "Point", "coordinates": [ -7.571956, 9.505576 ] } },
+{ "type": "Feature", "properties": { "name": "DU CONTROLE FINANCIER", "id": 36928 }, "geometry": { "type": "Point", "coordinates": [ -6.461011, 9.52747 ] } },
+{ "type": "Feature", "properties": { "name": "FONDS COOPERATIF RURAL", "id": 36994 }, "geometry": { "type": "Point", "coordinates": [ -6.53371, 5.259122 ] } },
+{ "type": "Feature", "properties": { "name": "FONDS DE DEVELOPPEMENT DE LA FORMATION PROFESSIONNELLE  FDFP DALOA", "id": 36996 }, "geometry": { "type": "Point", "coordinates": [ -6.445975, 6.88344 ] } },
+{ "type": "Feature", "properties": { "name": "FINANCE IMPOTS TRESOR MARCHE PUBLIQUE SOLDE", "id": 36997 }, "geometry": { "type": "Point", "coordinates": [ -3.489682, 6.739526 ] } },
+{ "type": "Feature", "properties": { "name": "FONDS LOCAL D EPARGNE ET DE CREDIT", "id": 36998 }, "geometry": { "type": "Point", "coordinates": [ -5.91787, 8.44662 ] } },
+{ "type": "Feature", "properties": { "name": "MAIRIE  D ARRAH  SECRETARIAT GENERAL  ET DIRECTION FINANCIERE", "id": 37502 }, "geometry": { "type": "Point", "coordinates": [ -3.970592, 6.677969 ] } },
+{ "type": "Feature", "properties": { "name": "MINISTERE DU CONTROL FINANCIER", "id": 37674 }, "geometry": { "type": "Point", "coordinates": [ -6.098887, 4.944502 ] } },
+{ "type": "Feature", "properties": { "name": "BUREAU CONTROL FINANCIER", "id": 39673 }, "geometry": { "type": "Point", "coordinates": [ -4.060007, 5.495498 ] } },
+{ "type": "Feature", "properties": { "name": "CONTROLE FINANCIER", "id": 39686 }, "geometry": { "type": "Point", "coordinates": [ -3.988563, 5.394208 ] } },
+{ "type": "Feature", "properties": { "name": "DIRECTION DES AFFAIRES FINANCIERES ET DU PATRIMOINE", "id": 39788 }, "geometry": { "type": "Point", "coordinates": [ -4.020377, 5.327662 ] } }
+]
+}

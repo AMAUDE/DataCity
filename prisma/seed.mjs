@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import { infrastructure } from "../data/infrastructure.mjs";
 import { regional } from "../data/regional.mjs";
+import { ANSTAT_THEMES, anstatThemeFor, anstatLabel } from "../data/anstat-themes.mjs";
 
 const prisma = new PrismaClient();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -108,7 +109,7 @@ async function main() {
 
   console.log("→ Thématiques…");
   const themeMap = {};
-  for (const t of THEMES) {
+  for (const t of [...THEMES, ...ANSTAT_THEMES]) {
     const row = await prisma.theme.create({ data: t });
     themeMap[t.slug] = row;
   }
@@ -343,6 +344,64 @@ async function main() {
       }
       console.log(`   ${file}: ${n} entités (${meta.source}).`);
     }
+  }
+
+  // ---- Couches du Géoportail ANSTAT (data/anstat/*.json) ----
+  const anstatDir = join(dataDir, "anstat");
+  if (existsSync(anstatDir)) {
+    const src = sourceMap["ANSTAT"];
+    const files = readdirSync(anstatDir).filter((f) => f.toLowerCase().endsWith(".json"));
+    console.log(`→ Géoportail ANSTAT (${files.length} couches)…`);
+    let anstatTotal = 0;
+    for (const file of files) {
+      let fc;
+      try { fc = JSON.parse(readFileSync(join(anstatDir, file), "utf8")); }
+      catch { continue; }
+      const feats = fc.features || [];
+      if (!feats.length) continue;
+      const theme = themeMap[anstatThemeFor(file)] || themeMap["administration"];
+      const label = anstatLabel(file);
+      const baseSlug = file.replace(/\.json$/i, "").normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      const ds = await prisma.dataset.create({
+        data: {
+          slug: `anstat-${baseSlug}`,
+          name: `${label.charAt(0).toUpperCase() + label.slice(1)} — ANSTAT`,
+          description: `Couche « ${label} » du Géoportail ANSTAT (${feats.length} entités).`,
+          format: "geojson", verified: true, verifiedAt: new Date(),
+          verifiedNote: "Source officielle : Géoportail ANSTAT.",
+          themeId: theme.id, sourceId: src.id,
+        },
+      });
+      // Normalisation + dédoublonnage
+      const seen = new Set();
+      const rows = [];
+      for (const ft of feats) {
+        const p = ft.properties || {};
+        const g = ft.geometry;
+        if (!g) continue;
+        let lat = null, lng = null, geom = null;
+        if (g.type === "Point") { lng = g.coordinates[0]; lat = g.coordinates[1]; }
+        else { const c = centroid(g); lat = c.lat; lng = c.lng; geom = JSON.stringify(g); }
+        const name = fixEncoding(p.name || p.nom || p.libelle || label);
+        const key = `${name}|${lat}|${lng}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        rows.push({
+          name, featureType: label,
+          latitude: lat, longitude: lng, geometry: geom,
+          properties: JSON.stringify({ ...p, source: src.name }),
+          admin1: fixEncoding(p.nomreg || p.region || null),
+          verified: true, datasetId: ds.id,
+        });
+      }
+      // Insertion par lots
+      for (let i = 0; i < rows.length; i += 2000) {
+        await prisma.feature.createMany({ data: rows.slice(i, i + 2000) });
+      }
+      anstatTotal += rows.length;
+    }
+    console.log(`   ${anstatTotal} entités ANSTAT intégrées.`);
   }
 
   const totals = {

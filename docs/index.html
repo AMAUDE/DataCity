@@ -189,8 +189,6 @@ function renderDatasets(){
     <div class="row muted" style="font-size:12px;margin-top:8px"><span>Source : <b style="color:#cbd5e1">${esc(d.source)}</b></span><span class="sep">·</span><span>${d.count} entités</span><span class="sep">·</span><span>${d.format.toUpperCase()}</span></div>
     <div class="row" style="margin-top:12px">
       <a class="btn small" href="./data/downloads/${d.slug}.geojson" download>⬇ GeoJSON</a>
-      <a class="btn small" href="./data/downloads/${d.slug}.csv" download>⬇ CSV</a>
-      <a class="btn small" href="./data/downloads/${d.slug}.json" download>⬇ JSON</a>
     </div></div>`).join("");
 }
 function renderSources(){

@@ -1,8 +1,0 @@
-id,nom,type,latitude,longitude,district_region,departement_commune,verifie,degre,source
-cmrev3ler003ryo7ehmuo9sbz,Cour Suprême,cour_supreme,5.322,-4.014,Abidjan,Plateau,oui,suprême,Ministère de la Justice et des Droits de l'Homme
-cmrev3lex003tyo7ek1maub8m,Cour d'Appel d'Abidjan,cour_appel,5.32,-4.012,Abidjan,Plateau,oui,appel,Ministère de la Justice et des Droits de l'Homme
-cmrev3lf2003vyo7e05zsk5ty,Tribunal de Première Instance d'Abidjan-Plateau,tribunal,5.321,-4.0125,Abidjan,Plateau,oui,première instance,Ministère de la Justice et des Droits de l'Homme
-cmrev3lf7003xyo7e6thr8v4x,Cour d'Appel de Bouaké,cour_appel,7.692,-5.031,Gbêkê,Bouaké,oui,appel,Ministère de la Justice et des Droits de l'Homme
-cmrev3lfd003zyo7e7ne5i2g2,Cour d'Appel de Daloa,cour_appel,6.877,-6.451,Haut-Sassandra,Daloa,oui,appel,Ministère de la Justice et des Droits de l'Homme
-cmrev3lfi0041yo7eyneoao7n,Tribunal de Première Instance de Korhogo,tribunal,9.4585,-5.629,Poro,Korhogo,non,première instance,Ministère de la Justice et des Droits de l'Homme
-cmrev3lfn0043yo7epzk3qlcw,Maison d'Arrêt et de Correction d'Abidjan (MACA),penitentiaire,5.39,-4.03,Abidjan,Yopougon,oui,pénitentiaire,Ministère de la Justice et des Droits de l'Homme
