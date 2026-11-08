@@ -10,3 +10,5 @@ npm-debug.log*
 /prisma/dev.db-journal
 *.tsbuildinfo
 .vercel
+__pycache__/
+*.pyc

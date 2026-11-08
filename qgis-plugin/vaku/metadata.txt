@@ -1,0 +1,29 @@
+[general]
+name=Vaku
+qgisMinimumVersion=3.34
+description=Gestionnaire de données Open Data pour QGIS — DataCity (Côte d'Ivoire), OpenStreetMap, geoBoundaries, HDX, WMS/WFS et institutions internationales (BAD, FMI, ONU, UNICEF).
+version=0.1.0
+author=KGA Data Management
+email=nagonejoseph8@gmail.com
+
+about=Vaku ajoute à QGIS un gestionnaire de données Open Data autonome. Il permet
+    de rechercher, prévisualiser et ajouter directement des couches sans quitter
+    QGIS, depuis la plateforme DataCity (référentiel géographique vérifié de la
+    Côte d'Ivoire), OpenStreetMap/Overpass, geoBoundaries, HDX, des fonds de
+    carte XYZ, des services WMS/WFS, des fichiers GeoJSON/GeoPackage/GeoTIFF
+    distants, ainsi que des indicateurs d'institutions internationales (BAD,
+    FMI, ONU, UNICEF). Les données DataCity peuvent être synchronisées dans un
+    miroir local SQLite pour un travail hors-ligne.
+
+tracker=https://github.com/amaude/datacity/issues
+repository=https://github.com/amaude/datacity
+homepage=https://github.com/amaude/datacity/tree/main/qgis-plugin/vaku
+
+hasProcessingProvider=no
+tags=opendata,opensource,osm,overpass,geoboundaries,hdx,wms,wfs,cote d'ivoire,datacity,gis
+
+category=Web
+icon=icon.svg
+experimental=True
+deprecated=False
+server=False

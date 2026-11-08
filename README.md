@@ -82,6 +82,14 @@ src/components/          Nav, DataExplorer, MapView, DownloadButtons, ImportForm
 src/lib/                 db (Prisma), session (JWT), geo (export GeoJSON/CSV)
 ```
 
+## Plugin QGIS — Vaku
+
+Le dossier [`qgis-plugin/vaku/`](qgis-plugin/vaku/README.md) contient **Vaku**,
+un plugin QGIS qui permet d'ajouter des couches DataCity (et d'autres sources
+Open Data : OSM, geoBoundaries, HDX, WMS/WFS, BAD/FMI/ONU/UNICEF) directement
+depuis QGIS, avec un miroir local pour un usage hors-ligne. Voir son README
+pour l'installation et le détail de l'architecture.
+
 ## Sources des données de référence
 
 - **geoBoundaries** (gbOpen, CC BY 4.0) — frontière nationale, districts, régions.
