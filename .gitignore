@@ -12,3 +12,4 @@ npm-debug.log*
 .vercel
 __pycache__/
 *.pyc
+/qgis-plugin/vaku.zip
